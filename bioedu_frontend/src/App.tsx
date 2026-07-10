@@ -10,6 +10,7 @@ import { DNABackground } from './components/DNABackground';
 import { Workshops } from './pages/Workshops';
 import { WorkshopDetails } from './pages/WorkshopDetails';
 import { AdvancedCourses } from './pages/AdvancedCourses';
+import { FAQ } from './pages/FAQ';
 
 function Home() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="/workshops" element={<Workshops />} />
             <Route path="/workshops/:id" element={<WorkshopDetails />} />
             <Route path="/advanced-courses" element={<AdvancedCourses />} />
+            <Route path="/faq" element={<FAQ />} />
           </Routes>
         </main>
         <Footer />

@@ -20,6 +20,7 @@ export function Navbar() {
           <Link to="/workshops" className="text-zinc-400 hover:text-zinc-50 transition-colors">Recent Training</Link>
           <Link to="/#blog" className="text-zinc-400 hover:text-zinc-50 transition-colors">Blog</Link>
           <Link to="/#pricing" className="text-zinc-400 hover:text-zinc-50 transition-colors">Pricing</Link>
+          <Link to="/faq" className="text-zinc-400 hover:text-zinc-50 transition-colors">FAQ</Link>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
@@ -49,6 +50,7 @@ export function Navbar() {
           <Link to="/workshops" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Recent Training</Link>
           <Link to="/#blog" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Blog</Link>
           <Link to="/#pricing" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Pricing</Link>
+          <Link to="/faq" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>FAQ</Link>
           <hr className="border-white/10" />
           <button className="w-full text-left p-2 text-zinc-300">Log in</button>
           <button className="w-full bg-emerald-500 text-zinc-50 p-2 rounded-lg font-medium">Get Started</button>
