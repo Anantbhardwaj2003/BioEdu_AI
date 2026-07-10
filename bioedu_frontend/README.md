@@ -1,75 +1,84 @@
-# React + TypeScript + Vite
+# BioEdu AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BioEdu AI is an advanced, interactive platform for biological education and research. It features cutting-edge 3D visualizations, dynamic routing, and comprehensive educational resources designed to make learning complex biological concepts intuitive and engaging.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Interactive 3D Visualizations**: Explore biological structures with a dynamic, interactive DNA background and custom 3D models using React Three Fiber.
+- **Modern UI/UX**: A sleek, responsive, and accessible interface built with Tailwind CSS v4 and Framer Motion for smooth animations.
+- **Educational Modules**: Access workshops and advanced courses covering various topics in bioinformatics, structural biology, and computational biology.
+- **Research Areas**: Deep dive into specialized biological research areas with immersive 3D models.
+- **Dynamic Routing**: Seamless navigation across different sections and detailed workshop pages using React Router v7.
 
-## React Compiler
+## 💻 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React 19](https://react.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://motion.dev/)
+- **3D Graphics**: [Three.js](https://threejs.org/) & [React Three Fiber](https://r3f.docs.pmnd.rs/)
+- **Routing**: [React Router](https://reactrouter.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+bioedu_frontend/
+├── src/
+│   ├── assets/           # Static assets (images, icons, 3D models)
+│   ├── components/       # Reusable UI components (Hero, Navbar, Features, 3D Models)
+│   ├── data/             # Static data files and constants
+│   ├── pages/            # Page-level components (Workshops, AdvancedCourses)
+│   ├── App.tsx           # Main application routing and layout
+│   ├── index.css         # Global styles and Tailwind configuration
+│   └── main.tsx          # Application entry point
+├── package.json          # Project dependencies and scripts
+├── tsconfig.json         # TypeScript configuration
+└── vite.config.ts        # Vite configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (v18 or higher recommended)
+- npm, yarn, pnpm, or bun
 
+### Installation
+
+1. Clone the repository and navigate to the frontend directory:
+   ```bash
+   cd bioedu_frontend
+   ```
+
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+   *(or `yarn install`, `pnpm install`, etc.)*
+
+### Running the Application
+
+To start the development server with Hot Module Replacement (HMR):
+
+```bash
+npm run dev
 ```
+
+The application will be available at `http://localhost:5173` by default.
+
+## 📜 Available Scripts
+
+- `npm run dev`: Starts the Vite development server.
+- `npm run build`: Compiles TypeScript and builds the app for production into the `dist` folder.
+- `npm run lint`: Runs ESLint to check for code quality and style issues.
+- `npm run preview`: Bootstraps a local web server to preview the production build generated by `npm run build`.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
