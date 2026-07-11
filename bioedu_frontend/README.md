@@ -1,6 +1,6 @@
-# BioEdu AI
+# GeneBoxAI
 
-BioEdu AI is an advanced, interactive platform for biological education and research. It features cutting-edge 3D visualizations, dynamic routing, and comprehensive educational resources designed to make learning complex biological concepts intuitive and engaging.
+GeneBoxAI is an advanced, interactive platform for biological education and research. It features cutting-edge 3D visualizations, dynamic routing, and comprehensive educational resources designed to make learning complex biological concepts intuitive and engaging.
 
 ## 🚀 Features
 
