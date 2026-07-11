@@ -12,6 +12,7 @@ import { WorkshopDetails } from './pages/WorkshopDetails';
 import { AdvancedCourses } from './pages/AdvancedCourses';
 import { FAQ } from './pages/FAQ';
 import { Teams } from './pages/Teams';
+import { AboutUs } from './pages/AboutUs';
 
 function Home() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="/advanced-courses" element={<AdvancedCourses />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/teams" element={<Teams />} />
+            <Route path="/about-us" element={<AboutUs />} />
           </Routes>
         </main>
         <Footer />

@@ -15,13 +15,11 @@ export function Navbar() {
         </Link>
         
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link to="/#features" className="text-zinc-400 hover:text-zinc-50 transition-colors">Features</Link>
           <Link to="/advanced-courses" className="text-zinc-400 hover:text-zinc-50 transition-colors">Advanced Courses</Link>
           <Link to="/workshops" className="text-zinc-400 hover:text-zinc-50 transition-colors">Recent Training</Link>
-          <Link to="/#blog" className="text-zinc-400 hover:text-zinc-50 transition-colors">Blog</Link>
-          <Link to="/#pricing" className="text-zinc-400 hover:text-zinc-50 transition-colors">Pricing</Link>
           <Link to="/faq" className="text-zinc-400 hover:text-zinc-50 transition-colors">FAQ</Link>
           <Link to="/teams" className="text-zinc-400 hover:text-zinc-50 transition-colors">Teams</Link>
+          <Link to="/about-us" className="text-zinc-400 hover:text-zinc-50 transition-colors">About Us</Link>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
@@ -53,6 +51,7 @@ export function Navbar() {
           <Link to="/#pricing" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Pricing</Link>
           <Link to="/faq" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>FAQ</Link>
           <Link to="/teams" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Teams</Link>
+          <Link to="/about-us" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>About Us</Link>
           <hr className="border-white/10" />
           <button className="w-full text-left p-2 text-zinc-300">Log in</button>
           <button className="w-full bg-emerald-500 text-zinc-50 p-2 rounded-lg font-medium">Get Started</button>
