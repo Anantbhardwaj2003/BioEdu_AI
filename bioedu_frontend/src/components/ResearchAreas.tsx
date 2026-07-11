@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
-import { Microscope, Dna, Brain, Shield, FlaskConical, X } from 'lucide-react';
+import { Microscope, Dna, Brain, Shield, FlaskConical, Activity, X } from 'lucide-react';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
-import { CancerModel, GeneticsModel, NervousSystemModel, ImmunologyModel, DrugDevelopmentModel } from './Research3DModels';
+import { CancerModel, GeneticsModel, NervousSystemModel, ImmunologyModel, DrugDevelopmentModel, MicrobiologyModel } from './Research3DModels';
 
 const researchData = [
   {
@@ -70,6 +70,19 @@ const researchData = [
       'Optimization of new candidates.'
     ],
     details: 'The Drug Development program bridges the gap between basic research and clinical trials. We employ cutting-edge screening technologies, structure-based drug design, and pharmacological studies to identify and optimize new drug candidates for various diseases.'
+  },
+  {
+    id: 'microbiology',
+    title: 'Microbiology',
+    icon: Activity,
+    Model: MicrobiologyModel,
+    benefits: [
+      'Bacterial pathogenesis.',
+      'Viral infection mechanisms.',
+      'Antimicrobial resistance.',
+      'Host-pathogen interactions.'
+    ],
+    details: 'Our microbiology research focuses on understanding the biology of microorganisms and their interactions with host organisms. We investigate bacterial and viral pathogenesis, antimicrobial resistance, and the complex dynamics of host-pathogen relationships.'
   }
 ];
 
