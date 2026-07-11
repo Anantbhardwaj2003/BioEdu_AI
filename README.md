@@ -38,7 +38,7 @@ bioedu_frontend/
 └── vite.config.ts        # Vite configuration
 ```
 
-## 🛠️ Getting Started
+### 🛠️ Getting Started
 
 ### Prerequisites
 
