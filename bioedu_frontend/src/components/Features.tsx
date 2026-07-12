@@ -4,13 +4,13 @@ import { X } from 'lucide-react';
 
 const features = [
   {
-    image: "https://images.unsplash.com/photo-1559757175-9b8ee52bbdb1?auto=format&fit=crop&q=80&w=800",
+    image: "https://tse4.mm.bing.net/th/id/OIP.7z8InOonI4xo0fDuQccy_wHaEL?r=0&pid=Api&P=0&h=180",
     title: "Socratic AI Tutor",
     description: "Our AI doesn't just give answers. It asks guiding questions to help you arrive at the solution yourself, building true intuition.",
     details: "The Socratic AI Tutor uses advanced large language models fine-tuned on biological literature. It engages in a multi-turn dialogue, identifying your misconceptions and prompting you to think critically. Rather than spoon-feeding facts about cellular respiration, it might ask you to consider what would happen if a specific enzyme were inhibited, guiding you to deduce the metabolic consequences."
   },
   {
-    image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=800",
+    image: "https://miro.medium.com/v2/resize:fit:1200/1*xwTZaT75ybFyMim7FjxZ_A.png",
     title: "Micro-simulations",
     description: "Adjust temperature, pH, and enzyme concentrations in real-time. Watch cellular processes react instantly to your changes.",
     details: "Experience molecular biology in a sandbox environment. Our real-time engine allows you to tweak environmental variables and observe the immediate biochemical responses. See how extreme pH denatures proteins or how varying substrate concentrations affect reaction rates using accurate Michaelis-Menten kinetics, bringing textbook graphs to life."
