@@ -13,7 +13,7 @@ export function Navbar() {
           <Dna className="w-6 h-6 text-emerald-400" />
           <span className="font-display font-semibold tracking-tight text-lg">BioEdu AI</span>
         </Link>
-        
+
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link to="/advanced-courses" className="text-zinc-400 hover:text-zinc-50 transition-colors">Advanced Courses</Link>
           <Link to="/workshops" className="text-zinc-400 hover:text-zinc-50 transition-colors">Recent Training</Link>
@@ -23,13 +23,13 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <button className="text-sm font-medium text-zinc-300 hover:text-zinc-50 transition-colors">Log in</button>
-          <button className="text-sm font-medium bg-white text-black px-4 py-2 rounded-full hover:bg-zinc-200 transition-colors">
+          <Link to="/login" className="text-sm font-medium text-zinc-300 hover:text-zinc-50 transition-colors">Log in</Link>
+          <Link to="/login" className="text-sm font-medium bg-white text-black px-4 py-2 rounded-full hover:bg-zinc-200 transition-colors">
             Get Started
-          </button>
+          </Link>
         </div>
 
-        <button 
+        <button
           className="md:hidden text-zinc-300"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -39,7 +39,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden absolute top-16 left-0 right-0 glass-card mx-4 p-4 flex flex-col gap-4 border-t border-white/5"
@@ -53,8 +53,8 @@ export function Navbar() {
           <Link to="/teams" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Teams</Link>
           <Link to="/about-us" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>About Us</Link>
           <hr className="border-white/10" />
-          <button className="w-full text-left p-2 text-zinc-300">Log in</button>
-          <button className="w-full bg-emerald-500 text-zinc-50 p-2 rounded-lg font-medium">Get Started</button>
+          <Link to="/login" className="w-full text-left p-2 text-zinc-300">Log in</Link>
+          <Link to="/login" className="w-full bg-emerald-500 text-zinc-50 p-2 rounded-lg font-medium">Get Started</Link>
         </motion.div>
       )}
     </nav>

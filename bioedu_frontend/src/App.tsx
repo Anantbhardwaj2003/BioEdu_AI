@@ -13,6 +13,7 @@ import { AdvancedCourses } from './pages/AdvancedCourses';
 import { FAQ } from './pages/FAQ';
 import { Teams } from './pages/Teams';
 import { AboutUs } from './pages/AboutUs';
+import { Auth } from './pages/Auth';
 
 function Home() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/login" element={<Auth />} />
           </Routes>
         </main>
         <Footer />

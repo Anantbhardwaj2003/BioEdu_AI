@@ -1,0 +1,91 @@
+import { motion, AnimatePresence } from 'motion/react';
+import { useState } from 'react';
+import { Dna, Mail, Lock, ArrowRight } from 'lucide-react';
+import { DNABackground } from '../components/DNABackground';
+
+export function Auth() {
+  const [isSignUp, setIsSignUp] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-[#050505] flex items-center justify-center relative z-10 p-6 overflow-hidden">
+      <DNABackground />
+      
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-md"
+      >
+        <div className="relative">
+          {/* Decorative elements behind the card */}
+          <div className="absolute -inset-0.5 bg-gradient-to-br from-emerald-500/50 via-teal-500/50 to-cyan-500/50 rounded-[2rem] blur-xl opacity-50 animate-pulse" />
+          <div className="relative bg-[#0a0f16]/60 backdrop-blur-2xl border border-white/10 p-8 rounded-[2rem] shadow-2xl overflow-hidden">
+            <div className="flex flex-col items-center mb-8">
+              <div className="w-14 h-14 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-white/10 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/10">
+                <Dna className="w-7 h-7 text-emerald-400" />
+              </div>
+              <h2 className="text-2xl font-display font-medium text-white mb-2">
+                {isSignUp ? 'Create an account' : 'Welcome back'}
+              </h2>
+              <p className="text-zinc-400 text-sm">
+                {isSignUp 
+                  ? 'Join our community of bioinformaticians.' 
+                  : 'Enter your credentials to access your account.'}
+              </p>
+            </div>
+
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="space-y-1">
+                <label className="text-xs font-medium text-zinc-400 pl-1">Email</label>
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
+                  <input
+                    type="email"
+                    placeholder="name@example.com"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400/50 focus:bg-white/10 transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs font-medium text-zinc-400 pl-1">Password</label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
+                  <input
+                    type="password"
+                    placeholder="••••••••"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-400/50 focus:bg-white/10 transition-all"
+                  />
+                </div>
+              </div>
+
+              <AnimatePresence mode="wait">
+                <motion.button
+                  key={isSignUp ? 'signup' : 'signin'}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-medium py-3 rounded-xl shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center gap-2 group mt-6"
+                >
+                  {isSignUp ? 'Sign Up' : 'Sign In'}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+              </AnimatePresence>
+            </form>
+
+            <div className="mt-6 text-center">
+              <button
+                onClick={() => setIsSignUp(!isSignUp)}
+                className="text-sm text-zinc-400 hover:text-white transition-colors focus:outline-none"
+              >
+                {isSignUp 
+                  ? 'Already have an account? Sign in' 
+                  : "Don't have an account? Sign up"}
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
