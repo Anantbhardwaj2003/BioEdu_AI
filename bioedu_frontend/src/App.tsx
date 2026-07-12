@@ -14,6 +14,7 @@ import { FAQ } from './pages/FAQ';
 import { Teams } from './pages/Teams';
 import { AboutUs } from './pages/AboutUs';
 import { Auth } from './pages/Auth';
+import { AIChatWidget } from './components/AIChatWidget';
 
 function Home() {
   return (
@@ -46,6 +47,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <AIChatWidget />
       </div>
     </BrowserRouter>
   );
