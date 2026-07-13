@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Sparkles } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -50,10 +49,6 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
-              <Link to="/login" className="px-8 py-4 bg-white text-black rounded-full font-medium flex items-center justify-center gap-2 hover:scale-105 transition-transform w-full sm:w-auto">
-                Get Started
-                <ArrowRight className="w-4 h-4" />
-              </Link>
             </motion.div>
           </div>
 
