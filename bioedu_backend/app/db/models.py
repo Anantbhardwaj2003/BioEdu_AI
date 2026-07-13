@@ -16,3 +16,16 @@ class User(Base):
     password_changed_at = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
     updated_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+
+class ContactMessage(Base):
+    __tablename__ = "contact_messages"
+
+    id = Column(BigInteger, primary_key=True, index=True)
+    name = Column(String, nullable=False)
+    organization = Column(String, nullable=True)
+    email = Column(String, nullable=False)
+    phone = Column(String, nullable=True)
+    message = Column(String, nullable=False)
+    status = Column(String, default="pending")
+    created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    updated_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
