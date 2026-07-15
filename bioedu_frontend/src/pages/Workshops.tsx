@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { workshops } from '../data/workshops';
-import { Calendar, Clock, User, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, User, ArrowRight, Users } from 'lucide-react';
 
 export function Workshops() {
   return (
@@ -61,12 +61,16 @@ export function Workshops() {
                 
                 <div className="mt-auto space-y-3">
                   <div className="flex items-center gap-2 text-zinc-400 text-sm">
-                    <Calendar className="w-4 h-4 text-emerald-400" />
+                    <Calendar className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>{workshop.date}</span>
                   </div>
                   <div className="flex items-center gap-2 text-zinc-400 text-sm">
-                    <User className="w-4 h-4 text-emerald-400" />
+                    <User className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>{workshop.instructor}</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-zinc-400 text-sm">
+                    <Users className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span className="line-clamp-2">{workshop.targetAudience}</span>
                   </div>
                 </div>
                 

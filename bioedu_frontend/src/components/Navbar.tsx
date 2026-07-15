@@ -43,7 +43,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 text-zinc-50">
           <Dna className="w-6 h-6 text-emerald-400" />
-          <span className="font-display font-semibold tracking-tight text-lg">BioEdu AI</span>
+          <span className="font-display font-semibold tracking-tight text-lg">GeneBox AI</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">

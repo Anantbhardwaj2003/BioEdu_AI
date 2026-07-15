@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { workshops } from '../data/workshops';
-import { Calendar, Clock, User, ArrowLeft, CheckCircle2, GraduationCap, CreditCard } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, CheckCircle2, GraduationCap, CreditCard, Users } from 'lucide-react';
 
 export function WorkshopDetails() {
   const { id } = useParams<{ id: string }>();
@@ -51,7 +51,7 @@ export function WorkshopDetails() {
         </div>
 
         <div className="p-6 sm:p-10">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10 pb-10 border-b border-zinc-50/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 pb-10 border-b border-zinc-50/10">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full glass flex items-center justify-center shrink-0">
                 <Calendar className="w-5 h-5 text-emerald-400" />
@@ -77,6 +77,15 @@ export function WorkshopDetails() {
               <div>
                 <p className="text-zinc-400 text-sm mb-1">Price</p>
                 <p className="text-zinc-50 font-medium">{workshop.price || "Free"}</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full glass flex items-center justify-center shrink-0">
+                <Users className="w-5 h-5 text-emerald-400" />
+              </div>
+              <div>
+                <p className="text-zinc-400 text-sm mb-1">Target Audience</p>
+                <p className="text-zinc-50 font-medium text-sm leading-tight">{workshop.targetAudience}</p>
               </div>
             </div>
           </div>

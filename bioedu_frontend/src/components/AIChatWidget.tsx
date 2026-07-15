@@ -37,7 +37,7 @@ export function AIChatWidget() {
     {
       id: 'welcome',
       type: 'bot',
-      text: 'Hello! I am your AI Research Assistant. How can I help you today?'
+      text: 'Hello! I am your GeneBox AI Assistant. How can I help you today?'
     }
   ]);
   const [inputValue, setInputValue] = useState('');
@@ -97,7 +97,7 @@ export function AIChatWidget() {
                   <Bot className="w-5 h-5 text-emerald-400" />
                 </div>
                 <div>
-                  <h3 className="text-zinc-50 font-medium text-sm">BioAssist AI</h3>
+                  <h3 className="text-zinc-50 font-medium text-sm">GeneBox AI</h3>
                   <p className="text-emerald-400 text-xs flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Online

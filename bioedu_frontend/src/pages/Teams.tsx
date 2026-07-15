@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Mail } from 'lucide-react';
 import Anant from '../assets/ab.jpeg';
+import Pawan from '../assets/pks.png';
 
 const Linkedin = ({ className }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -8,11 +9,11 @@ const Linkedin = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const Twitter = ({ className }: { className?: string }) => (
-  <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-  </svg>
-);
+// const Twitter = ({ className }: { className?: string }) => (
+//   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+//     <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+//   </svg>
+// );
 
 const teamMembers = [
   {
@@ -20,14 +21,14 @@ const teamMembers = [
     role: 'Lead AI Full Stack Engineer',
     image: Anant,
     bio: 'Anant is a seasoned AI engineer with expertise in full-stack development, specializing in building scalable AI-driven applications for biological research.',
-    social: { linkedin: '#', twitter: '#', mail: '#' }
+    social: { linkedin: 'https://www.linkedin.com/in/anant-bhardwaj-b34417292/', twitter: '#', mail: 'araabh6565@gmail.com' }
   },
   {
     name: 'Mr. Pawan Sharma',
     role: 'Biologist',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400',
+    image: Pawan,
     bio: 'Expert in cryo-EM and structure-based drug design, leading our drug development pipeline.',
-    social: { linkedin: '#', twitter: '#', mail: '#' }
+    social: { linkedin: 'https://www.linkedin.com/in/pawan-sharma-62424a283/', twitter: '#', mail: 'pks.bioinfo@gmail.com' }
   }
 ];
 
@@ -83,13 +84,13 @@ export function Teams() {
                   </p>
                   
                   <div className="pt-4 flex items-center gap-4 border-t border-white/5">
-                    <a href={member.social.linkedin} className="text-zinc-500 hover:text-emerald-400 transition-colors">
+                    <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-emerald-400 transition-colors">
                       <Linkedin className="w-5 h-5" />
                     </a>
-                    <a href={member.social.twitter} className="text-zinc-500 hover:text-emerald-400 transition-colors">
+                    {/* <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-emerald-400 transition-colors">
                       <Twitter className="w-5 h-5" />
-                    </a>
-                    <a href={member.social.mail} className="text-zinc-500 hover:text-emerald-400 transition-colors">
+                    </a> */}
+                    <a href={member.social.mail.includes('@') ? `mailto:${member.social.mail}` : member.social.mail} className="text-zinc-500 hover:text-emerald-400 transition-colors">
                       <Mail className="w-5 h-5" />
                     </a>
                   </div>

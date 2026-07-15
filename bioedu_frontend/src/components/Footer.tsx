@@ -26,7 +26,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 text-zinc-50 mb-4">
               <Dna className="w-6 h-6 text-emerald-400" />
-              <span className="font-display font-semibold tracking-tight text-lg">BioEdu AI</span>
+              <span className="font-display font-semibold tracking-tight text-lg">GeneBox AI</span>
             </div>
             <p className="text-zinc-500 text-sm">
               The next-generation platform for biological discovery and education.
@@ -61,7 +61,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-zinc-600 text-sm">
-            © {new Date().getFullYear()} BioEdu AI Inc. All rights reserved.
+            © {new Date().getFullYear()} GeneBox AI Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-zinc-500">
             <a href="https://github.com/Anantbhardwaj2003/BioEdu_AI" target='_blank' rel='noopener noreferrer' className="hover:text-zinc-50 transition-colors"><Github className="w-5 h-5" /></a>
