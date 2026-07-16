@@ -7,3 +7,6 @@ python-jose[cryptography]
 pydantic
 pydantic-settings
 python-multipart
+pydantic
+email-validator
+
