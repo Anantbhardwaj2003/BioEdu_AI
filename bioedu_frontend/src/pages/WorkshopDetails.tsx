@@ -1,11 +1,61 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { useState } from 'react';
 import { workshops } from '../data/workshops';
 import { Calendar, Clock, User, ArrowLeft, CheckCircle2, GraduationCap, CreditCard, Users } from 'lucide-react';
 
 export function WorkshopDetails() {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const [isEnrolling, setIsEnrolling] = useState(false);
+  const [isEnrolled, setIsEnrolled] = useState(false);
+  const [enrollError, setEnrollError] = useState('');
+  
   const workshop = workshops.find(w => w.id === id);
+
+  const handleEnroll = async () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login');
+      return;
+    }
+    
+    setIsEnrolling(true);
+    setEnrollError('');
+    try {
+      const res = await fetch('http://localhost:8000/api/workshops/enroll', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ 
+          w_id: workshop.id,
+          title: workshop.title,
+          date: workshop.date,
+          instructor: workshop.instructor,
+          description: workshop.description,
+          image: workshop.image,
+          topics: workshop.topics,
+          level: workshop.level,
+          duration: workshop.duration,
+          price: workshop.price,
+          target_audience: workshop.targetAudience
+        })
+      });
+      
+      const data = await res.json();
+      if (res.ok) {
+        setIsEnrolled(true);
+      } else {
+        setEnrollError(data.detail || 'Failed to enroll.');
+      }
+    } catch (err) {
+      setEnrollError('An error occurred.');
+    } finally {
+      setIsEnrolling(false);
+    }
+  };
 
   if (!workshop) {
     return (
@@ -112,10 +162,36 @@ export function WorkshopDetails() {
             </ul>
           </div>
 
-          <div className="flex justify-center mt-12">
-            <button className="px-8 py-4 bg-emerald-500 text-zinc-50 rounded-full font-medium hover:bg-emerald-400 transition-colors w-full sm:w-auto text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-              Enroll Now
-            </button>
+          <div className="flex flex-col items-center mt-12 gap-4">
+            {isEnrolled ? (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="w-full max-w-md bg-emerald-500/10 border border-emerald-500/30 p-8 rounded-2xl flex flex-col items-center gap-3 text-center glass-card"
+              >
+                <div className="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mb-2 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                  <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-zinc-50 tracking-tight">You successfully enrolled!</h3>
+                <p className="text-zinc-300 leading-relaxed">
+                  We will connect with you through our Learning Management System shortly.
+                </p>
+              </motion.div>
+            ) : (
+              <>
+                <button 
+                  onClick={handleEnroll}
+                  disabled={isEnrolling}
+                  className="px-8 py-4 bg-emerald-500 text-zinc-50 rounded-full font-medium hover:bg-emerald-400 transition-colors w-full sm:w-auto text-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] disabled:opacity-50">
+                  {isEnrolling ? 'Enrolling...' : 'Enroll Now'}
+                </button>
+                {enrollError && (
+                  <p className="text-sm font-medium text-red-400">
+                    {enrollError}
+                  </p>
+                )}
+              </>
+            )}
           </div>
         </div>
       </motion.div>

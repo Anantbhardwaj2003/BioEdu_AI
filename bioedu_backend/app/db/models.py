@@ -1,4 +1,5 @@
-from sqlalchemy import Column, String, Boolean, DateTime, Integer, BigInteger
+from sqlalchemy import Column, String, Boolean, DateTime, Integer, BigInteger, ForeignKey, Text, UniqueConstraint
+from sqlalchemy.dialects.postgresql import ARRAY
 from app.db.database import Base
 from datetime import datetime, timezone
 
@@ -29,3 +30,32 @@ class ContactMessage(Base):
     status = Column(String, default="pending")
     created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
     updated_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+
+class Workshop(Base):
+    __tablename__ = "workshops"
+
+    w_id = Column(String, primary_key=True, index=True)
+    title = Column(String, nullable=False)
+    date = Column(String)
+    instructor = Column(String)
+    description = Column(Text)
+    image = Column(Text)
+    topics = Column(ARRAY(String))
+    level = Column(String)
+    duration = Column(String)
+    price = Column(String)
+    target_audience = Column(Text)
+    created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+class WorkshopEnrollment(Base):
+    __tablename__ = "workshop_enrollments"
+
+    enrollment_id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(BigInteger, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    w_id = Column(String, ForeignKey("workshops.w_id", ondelete="CASCADE"), nullable=False)
+    enrollment_date = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    status = Column(String, default="Enrolled")
+
+    __table_args__ = (
+        UniqueConstraint('id', 'w_id', name='uq_user_workshop'),
+    )
