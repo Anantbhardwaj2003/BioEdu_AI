@@ -16,12 +16,14 @@ import { AboutUs } from './pages/AboutUs';
 import { Auth } from './pages/Auth';
 import { PaymentInterface } from './pages/PaymentInterface';
 import { AIChatWidget } from './components/AIChatWidget';
+import { DummyCertificates } from './components/DummyCertificates';
 
 function Home() {
   return (
     <>
       <Hero />
       <Features />
+      <DummyCertificates />
       <Blog />
       <ResearchAreas />
       <Contact />
