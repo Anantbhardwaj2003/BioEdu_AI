@@ -19,7 +19,7 @@ export function Auth() {
 
     const endpoint = isSignUp ? '/api/auth/signup' : '/api/auth/signin';
     try {
-      const response = await fetch(`http://localhost:8000${endpoint}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

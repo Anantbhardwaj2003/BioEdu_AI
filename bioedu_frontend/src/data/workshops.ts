@@ -50,7 +50,7 @@ export const workshops = [
     ],
     level: "Advanced",
     duration: "2 Hours",
-    price: "Free",
+    price: "RS 199/-",
     targetAudience: "Early-career faculty, postgraduates, and researchers preparing active manuscripts."
   }
 ];

@@ -14,6 +14,7 @@ import { FAQ } from './pages/FAQ';
 import { Teams } from './pages/Teams';
 import { AboutUs } from './pages/AboutUs';
 import { Auth } from './pages/Auth';
+import { PaymentInterface } from './pages/PaymentInterface';
 import { AIChatWidget } from './components/AIChatWidget';
 
 function Home() {
@@ -44,6 +45,7 @@ export default function App() {
             <Route path="/teams" element={<Teams />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/login" element={<Auth />} />
+            <Route path="/payment/:id" element={<PaymentInterface />} />
           </Routes>
         </main>
         <Footer />

@@ -14,16 +14,25 @@ export function WorkshopDetails() {
   const workshop = workshops.find(w => w.id === id);
 
   const handleEnroll = async () => {
+    if (!workshop) return;
+    
     const token = localStorage.getItem('token');
     if (!token) {
       navigate('/login');
       return;
     }
     
+    // Redirect to payment if the workshop is not free
+    const isPaid = workshop.price && workshop.price.toLowerCase() !== 'free';
+    if (isPaid) {
+      navigate(`/payment/${workshop.id}`);
+      return;
+    }
+    
     setIsEnrolling(true);
     setEnrollError('');
     try {
-      const res = await fetch('http://localhost:8000/api/workshops/enroll', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/workshops/enroll`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
