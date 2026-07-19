@@ -17,6 +17,8 @@ import { Auth } from './pages/Auth';
 import { PaymentInterface } from './pages/PaymentInterface';
 import { AIChatWidget } from './components/AIChatWidget';
 import { DummyCertificates } from './components/DummyCertificates';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsService } from './pages/TermsService';
 
 function Home() {
   return (
@@ -50,6 +52,8 @@ export default function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/login" element={<Auth />} />
             <Route path="/payment/:id" element={<PaymentInterface />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsService />} />
           </Routes>
         </main>
         <Footer />
