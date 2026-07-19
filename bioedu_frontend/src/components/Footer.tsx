@@ -1,5 +1,5 @@
 import { Dna } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 // const Twitter = ({ className }: { className?: string }) => (
 //   <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 //     <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -36,27 +36,27 @@ export function Footer() {
           <div>
             <h4 className="text-zinc-50 font-medium mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-zinc-500">
-              <li><a href="/workshops" className="hover:text-emerald-400 transition-colors">Workshop</a></li>
-              <li><a href="/advanced-courses" className="hover:text-emerald-400 transition-colors">Advanced Courses</a></li>
-              <li><a href="/faq" className="hover:text-emerald-400 transition-colors">FAQ</a></li>
+              <li><Link to="/workshops" className="hover:text-emerald-400 transition-colors">Workshop</Link></li>
+              <li><Link to="/advanced-courses" className="hover:text-emerald-400 transition-colors">Advanced Courses</Link></li>
+              <li><Link to="/faq" className="hover:text-emerald-400 transition-colors">FAQ</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-zinc-50 font-medium mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-zinc-500">
-              <li><a href="/about-us" className="hover:text-emerald-400 transition-colors">About Us</a></li>
-              <li><a href="/teams" className="hover:text-emerald-400 transition-colors">Teams</a></li>
-              <li><a href="/blog" className="hover:text-emerald-400 transition-colors">Blog</a></li>
-              <li><a href="/contact" className="hover:text-emerald-400 transition-colors">Contact</a></li>
+              <li><Link to="/about-us" className="hover:text-emerald-400 transition-colors">About Us</Link></li>
+              <li><Link to="/teams" className="hover:text-emerald-400 transition-colors">Teams</Link></li>
+              <li><Link to="/blog" className="hover:text-emerald-400 transition-colors">Blog</Link></li>
+              <li><Link to="/contact" className="hover:text-emerald-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-zinc-50 font-medium mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-zinc-500">
-              <li><a href="/privacy-policy" className="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="/terms-of-service" className="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+              <li><Link to="/privacy-policy" className="hover:text-emerald-400 transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="hover:text-emerald-400 transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>
