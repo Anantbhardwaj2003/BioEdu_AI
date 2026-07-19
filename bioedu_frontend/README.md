@@ -11,12 +11,14 @@
     <img src="https://img.shields.io/badge/TypeScript-latest-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Tailwind-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
     <img src="https://img.shields.io/badge/Three.js-latest-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js" />
+    <img src="https://img.shields.io/badge/FastAPI-latest-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+    <img src="https://img.shields.io/badge/PostgreSQL-latest-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
   </div>
 </div>
 
 <br/>
 
-GeneBoxAI features cutting-edge 3D visualizations, dynamic routing, and comprehensive educational resources designed to make learning complex biological concepts intuitive and engaging.
+GeneBoxAI is a full-stack web application combining cutting-edge 3D visualizations, dynamic routing, robust authentication, and comprehensive educational resources designed to make learning complex biological concepts intuitive and engaging.
 
 <details open>
 <summary><h2>📑 Table of Contents</h2></summary>
@@ -38,15 +40,17 @@ GeneBoxAI features cutting-edge 3D visualizations, dynamic routing, and comprehe
 
 - **Interactive 3D Visualizations**: Explore biological structures with a dynamic, interactive DNA background and custom 3D models using React Three Fiber.
 - **Modern UI/UX**: A sleek, responsive, and accessible interface built with Tailwind CSS v4 and Framer Motion for smooth animations.
-- **Educational Modules**: Access workshops and advanced courses covering various topics in bioinformatics, structural biology, and computational biology.
-- **Research Areas**: Deep dive into specialized biological research areas with immersive 3D models.
-- **Dynamic Routing**: Seamless navigation across different sections and detailed workshop pages using React Router v7.
+- **Robust Backend**: A fast and secure backend built with FastAPI, utilizing PostgreSQL for robust data management and JWT-based authentication.
+- **AI-Powered Chatbot**: A hybrid conversational chatbot system providing contextual guidance and secure SQL-driven insights.
+- **Educational Modules & Certifications**: Access workshops, advanced courses, handle enrollments securely with a payment interface, and generate completion certificates.
+- **Dynamic Routing**: Seamless navigation across different sections and detailed workshop pages using React Router.
 
 ---
 
 <details>
 <summary><h2>💻 Tech Stack (Click to expand)</h2></summary>
 
+### Frontend
 | Category       | Technology                                                                |
 | -------------- | ------------------------------------------------------------------------- |
 | **Framework**  | [React 19](https://react.dev/)                                            |
@@ -56,7 +60,15 @@ GeneBoxAI features cutting-edge 3D visualizations, dynamic routing, and comprehe
 | **Animations** | [Framer Motion](https://motion.dev/)                                      |
 | **3D Graphics**| [Three.js](https://threejs.org/) & [React Three Fiber](https://r3f.docs.pmnd.rs/) |
 | **Routing**    | [React Router](https://reactrouter.com/)                                  |
-| **Icons**      | [Lucide React](https://lucide.dev/)                                       |
+
+### Backend
+| Category       | Technology                                                                |
+| -------------- | ------------------------------------------------------------------------- |
+| **Framework**  | [FastAPI](https://fastapi.tiangolo.com/)                                  |
+| **Language**   | [Python](https://www.python.org/)                                         |
+| **Database**   | [PostgreSQL](https://www.postgresql.org/)                                 |
+| **Authentication**| JWT (JSON Web Tokens)                                                  |
+| **AI/Vector DB**| [Qdrant](https://qdrant.tech/)                                         |
 
 </details>
 
@@ -66,18 +78,27 @@ GeneBoxAI features cutting-edge 3D visualizations, dynamic routing, and comprehe
 <summary><h2>📂 Project Structure (Click to expand)</h2></summary>
 
 ```text
-bioedu_frontend/
-├── src/
-│   ├── assets/           # Static assets (images, icons, 3D models)
-│   ├── components/       # Reusable UI components (Hero, Navbar, Features, 3D Models)
-│   ├── data/             # Static data files and constants
-│   ├── pages/            # Page-level components (Workshops, AdvancedCourses)
-│   ├── App.tsx           # Main application routing and layout
-│   ├── index.css         # Global styles and Tailwind configuration
-│   └── main.tsx          # Application entry point
-├── package.json          # Project dependencies and scripts
-├── tsconfig.json         # TypeScript configuration
-└── vite.config.ts        # Vite configuration
+BioEdu_AI/
+├── bioedu_frontend/      # React & Vite frontend
+│   ├── src/
+│   │   ├── assets/       # Static assets (images, icons, 3D models)
+│   │   ├── components/   # Reusable UI components (Hero, Navbar, Features, 3D Models)
+│   │   ├── data/         # Static data files and constants
+│   │   ├── pages/        # Page-level components (Workshops, AdvancedCourses, Auth)
+│   │   ├── App.tsx       # Main application routing and layout
+│   │   ├── index.css     # Global styles and Tailwind configuration
+│   │   └── main.tsx      # Application entry point
+│   ├── package.json      # Frontend dependencies
+│   └── vite.config.ts    # Vite configuration
+│
+└── bioedu_backend/       # FastAPI Python backend
+    ├── app/              # Main application package
+    │   ├── api/          # Route handlers
+    │   ├── core/         # Security, config, and core logic
+    │   ├── models/       # SQLAlchemy models
+    │   └── main.py       # FastAPI application entry point
+    ├── requirements.txt  # Python dependencies
+    └── .env              # Environment variables (not tracked by git)
 ```
 </details>
 
@@ -87,41 +108,64 @@ bioedu_frontend/
 
 ### Prerequisites
 
-- Node.js (v18 or higher recommended)
-- npm, yarn, pnpm, or bun
+- **Node.js** (v18 or higher recommended) and npm/yarn
+- **Python** (v3.9 or higher)
+- **PostgreSQL** installed and running
 
-### Installation
+### Backend Setup
 
-1. Clone the repository and navigate to the frontend directory:
+1. Navigate to the backend directory:
+   ```bash
+   cd bioedu_backend
+   ```
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   # Windows:
+   venv\Scripts\activate
+   # macOS/Linux:
+   source venv/bin/activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Create a `.env` file in the backend root based on your configuration (Database URL, Secret Key, etc.).
+5. Start the FastAPI server:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+
+### Frontend Setup
+
+1. Open a new terminal and navigate to the frontend directory:
    ```bash
    cd bioedu_frontend
    ```
-
 2. Install the dependencies:
    ```bash
    npm install
    ```
-   *(or `yarn install`, `pnpm install`, etc.)*
+3. Create a `.env` file in the frontend root and set your API URL (e.g., `VITE_API_URL=http://localhost:8000`).
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-### Running the Application
-
-To start the development server with Hot Module Replacement (HMR):
-
-```bash
-npm run dev
-```
-
-The application will be available at `http://localhost:5173` by default.
+The frontend application will be available at `http://localhost:5173` and the backend API at `http://localhost:8000`.
 
 ---
 
 <details>
 <summary><h2>📜 Available Scripts (Click to expand)</h2></summary>
 
+### Frontend (`bioedu_frontend/`)
 - `npm run dev`: Starts the Vite development server.
-- `npm run build`: Compiles TypeScript and builds the app for production into the `dist` folder.
-- `npm run lint`: Runs ESLint to check for code quality and style issues.
-- `npm run preview`: Bootstraps a local web server to preview the production build generated by `npm run build`.
+- `npm run build`: Compiles TypeScript and builds the app for production.
+- `npm run lint`: Runs ESLint for code quality checks.
+
+### Backend (`bioedu_backend/`)
+- `uvicorn app.main:app --reload`: Starts the FastAPI development server with hot-reload.
 
 </details>
 
@@ -129,11 +173,13 @@ The application will be available at `http://localhost:5173` by default.
 
 ## 🎯 Roadmap
 
-- [x] Initial Project Setup
+- [x] Initial Project Setup (React + Vite)
 - [x] Integrate React Three Fiber for 3D visualizations
+- [x] Build secure FastAPI Backend with PostgreSQL
+- [x] Implement JWT user authentication
+- [x] Create Hybrid Chatbot interface
 - [ ] Add more comprehensive biological data sets
-- [ ] Implement user authentication and progress tracking
-- [ ] Create interactive quizzes for workshops
+- [ ] Implement interactive quizzes for workshops
 
 ---
 
