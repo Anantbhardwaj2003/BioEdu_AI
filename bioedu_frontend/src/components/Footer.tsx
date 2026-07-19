@@ -36,17 +36,19 @@ export function Footer() {
           <div>
             <h4 className="text-zinc-50 font-medium mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-zinc-500">
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Features</a></li>
+              <li><a href="/workshops" className="hover:text-emerald-400 transition-colors">Workshop</a></li>
+              <li><a href="/advanced-courses" className="hover:text-emerald-400 transition-colors">Advanced Courses</a></li>
+              <li><a href="/faq" className="hover:text-emerald-400 transition-colors">FAQ</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-zinc-50 font-medium mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-zinc-500">
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-emerald-400 transition-colors">Contact</a></li>
+              <li><a href="/about-us" className="hover:text-emerald-400 transition-colors">About Us</a></li>
+              <li><a href="/teams" className="hover:text-emerald-400 transition-colors">Teams</a></li>
+              <li><a href="/blog" className="hover:text-emerald-400 transition-colors">Blog</a></li>
+              <li><a href="/contact" className="hover:text-emerald-400 transition-colors">Contact</a></li>
             </ul>
           </div>
 

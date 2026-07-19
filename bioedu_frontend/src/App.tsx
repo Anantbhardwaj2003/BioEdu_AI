@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
-import { Blog } from './components/Blog';
+import { Blog } from './pages/Blog';
 import { ResearchAreas } from './components/ResearchAreas';
-import { Contact } from './components/Contact';
+import { Contact } from './pages/Contact';
 import { Footer } from './components/Footer';
 import { DNABackground } from './components/DNABackground';
 import { Workshops } from './pages/Workshops';
@@ -40,6 +40,8 @@ export default function App() {
         <main className="relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/workshops" element={<Workshops />} />
             <Route path="/workshops/:id" element={<WorkshopDetails />} />
             <Route path="/advanced-courses" element={<AdvancedCourses />} />
