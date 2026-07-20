@@ -54,11 +54,11 @@ export default function App() {
             <Route path="/advanced-courses" element={<AdvancedCourses />} />
 
             {/* ---------------- Research Areas ---------------- */}
-            <Route path="/cancer-research" element={<CancerResearchPage />} />
-            <Route path="/genetics" element={<GeneticsPage />} />
-            <Route path="/nervous-system" element={<NervousSystemPage />} />
-            <Route path="/immunology" element={<ImmunologyPage />} />
-            <Route path="/immuno-oncology" element={<ImmunoOncologyPage />} />
+            <Route path="/advanced-courses/cancer" element={<CancerResearchPage />} />
+            <Route path="/advanced-courses/genetics" element={<GeneticsPage />} />
+            <Route path="/advanced-courses/nervous-system" element={<NervousSystemPage />} />
+            <Route path="/advanced-courses/immunology" element={<ImmunologyPage />} />
+            <Route path="/advanced-courses/immuno-oncology" element={<ImmunoOncologyPage />} />
 
             <Route path="/faq" element={<FAQ />} />
             <Route path="/teams" element={<Teams />} />
