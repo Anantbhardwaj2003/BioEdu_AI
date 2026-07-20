@@ -19,6 +19,11 @@ import { AIChatWidget } from './components/AIChatWidget';
 import { DummyCertificates } from './components/DummyCertificates';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsService } from './pages/TermsService';
+import { CancerResearchPage } from './pages/CancerResearchPage';
+import { GeneticsPage } from './pages/GeneticsPage';
+import { NervousSystemPage } from './pages/NervousSystemPage';
+import { ImmunologyPage } from './pages/ImmunologyPage';
+import { ImmunoOncologyPage } from './pages/ImmunoOncologyPage';
 
 function Home() {
   return (
@@ -47,6 +52,14 @@ export default function App() {
             <Route path="/workshops" element={<Workshops />} />
             <Route path="/workshops/:id" element={<WorkshopDetails />} />
             <Route path="/advanced-courses" element={<AdvancedCourses />} />
+
+            {/* ---------------- Research Areas ---------------- */}
+            <Route path="/cancer-research" element={<CancerResearchPage />} />
+            <Route path="/genetics" element={<GeneticsPage />} />
+            <Route path="/nervous-system" element={<NervousSystemPage />} />
+            <Route path="/immunology" element={<ImmunologyPage />} />
+            <Route path="/immuno-oncology" element={<ImmunoOncologyPage />} />
+
             <Route path="/faq" element={<FAQ />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/about-us" element={<AboutUs />} />

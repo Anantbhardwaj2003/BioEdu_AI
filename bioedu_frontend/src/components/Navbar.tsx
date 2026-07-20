@@ -1,11 +1,12 @@
-import { motion } from 'motion/react';
-import { Dna, Menu, X, LogOut } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Dna, Menu, X, LogOut, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [userEmail, setUserEmail] = useState('');
+  const [isCoursesOpen, setIsCoursesOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,11 +48,33 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link to="/advanced-courses" className="text-zinc-400 hover:text-zinc-50 transition-colors">Advanced Courses</Link>
-          <Link to="/workshops" className="text-zinc-400 hover:text-zinc-50 transition-colors">Recent Training</Link>
-          <Link to="/faq" className="text-zinc-400 hover:text-zinc-50 transition-colors">FAQ</Link>
-          <Link to="/teams" className="text-zinc-400 hover:text-zinc-50 transition-colors">Teams</Link>
-          <Link to="/about-us" className="text-zinc-400 hover:text-zinc-50 transition-colors">About Us</Link>
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsCoursesOpen(true)}
+            onMouseLeave={() => setIsCoursesOpen(false)}
+          >
+            <Link to="/advanced-courses" className="text-zinc-400 hover:text-zinc-50 transition-colors flex items-center gap-1 py-4">Advanced Courses<ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCoursesOpen ? 'rotate-180' : ''}`} /></Link>
+            <AnimatePresence>
+              {isCoursesOpen && (
+                <motion.div
+                  initial={{opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                  className="absolute top-full left-0 mt-2 w-56 bg-[#0a0f16]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl py-2 z-50 flex flex-col"
+                >
+                  <Link to="/advanced-courses/cancer" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Cancer Research</Link>
+                  <Link to="/advanced-courses/genetics" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Genetics</Link>
+                  <Link to="/advanced-courses/nervous-system" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Nervous System</Link>
+                  <Link to="/advanced-courses/immunology" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Immunology</Link>
+                  <Link to="/advanced-courses/immuno-oncology" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Immuno-oncology</Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          <Link to="/workshops" className="text-zinc-400 hover:text-zinc-50 transition-colors py-4">Recent Training</Link>
+          <Link to="/faq" className="text-zinc-400 hover:text-zinc-50 transition-colors py-4">FAQ</Link>
+          <Link to="/teams" className="text-zinc-400 hover:text-zinc-50 transition-colors py-4">Teams</Link>
+          <Link to="/about-us" className="text-zinc-400 hover:text-zinc-50 transition-colors py-4">About Us</Link>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
