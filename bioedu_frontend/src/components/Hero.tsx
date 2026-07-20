@@ -62,7 +62,7 @@ export function Hero() {
             <div className="glass-card p-2 relative overflow-hidden aspect-video rounded-3xl border border-zinc-50/10 shadow-[0_0_50px_rgba(16,185,129,0.15)]">
               <iframe
                 className="w-full h-full rounded-2xl bg-[#0a0a0a]"
-                src="https://www.youtube.com/embed/BCaEqQdGy3w?si=nsTpygHCuaY1XF1O&autoplay=0&controls=1&rel=0"
+                src="https://www.youtube.com/embed/B5yRIv8V5fc?si=oVCD2eVaNJa2xF6f&autoplay=0&controls=1&rel=0"
                 title="What is Bioinformatics"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
