@@ -35,7 +35,7 @@ export function GeneticsPage() {
           transition={{ delay: 0.1 }}
           className="w-full h-[40vh] md:h-[60vh] rounded-3xl overflow-hidden mb-24 relative border border-white/10 shadow-2xl"
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-transparent to-transparent z-10"></div>
           <img 
             src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&q=80" 
             alt="DNA Structure and Research" 
@@ -185,11 +185,11 @@ export function GeneticsPage() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 blur-2xl opacity-50 rounded-[3rem]" />
+            <div className="absolute -inset-4 bg-linear-to-r from-emerald-500/20 to-cyan-500/20 blur-2xl opacity-50 rounded-[3rem]" />
             <img 
               src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80" 
               alt="DNA and Gene Editing" 
-              className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-[500px] w-full"
+              className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-125 w-full"
             />
           </motion.div>
         </div>
@@ -202,11 +202,11 @@ export function GeneticsPage() {
             viewport={{ once: true }}
             className="relative order-2 lg:order-1"
           >
-            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-2xl opacity-50 rounded-[3rem]" />
+            <div className="absolute -inset-4 bg-linear-to-r from-cyan-500/20 to-blue-500/20 blur-2xl opacity-50 rounded-[3rem]" />
             <img 
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" 
               alt="Data visualization and analysis" 
-              className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-[500px] w-full"
+              className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-125 w-full"
             />
           </motion.div>
 
