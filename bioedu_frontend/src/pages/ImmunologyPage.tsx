@@ -204,7 +204,7 @@ export function ImmunologyPage() {
           >
             <div className="absolute -inset-4 bg-linear-to-r from-cyan-500/20 to-blue-500/20 blur-2xl opacity-50 rounded-[3rem]" />
             <img 
-              src="https://images.unsplash.com/photo-1618015359908-0133c5e884e1?auto=format&fit=crop&w=800&q=80" 
+              src="https://tse4.mm.bing.net/th/id/OIP.4EUUsvpI_oqVPitB5wNTmQHaE2?r=0&pid=Api&P=0&h=180" 
               alt="Next generation vaccine development" 
               className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-125 w-full"
             />

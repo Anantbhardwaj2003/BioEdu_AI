@@ -204,7 +204,7 @@ export function CancerResearchPage() {
           >
             <div className="absolute -inset-4 bg-linear-to-r from-cyan-500/20 to-blue-500/20 blur-2xl opacity-50 rounded-[3rem]" />
             <img 
-              src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" 
+              src="https://plus.unsplash.com/premium_photo-1661438024061-a9be208c91ac?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wxMHx8fGVufDB8fHx8fA%3D%3D" 
               alt="Researcher looking through microscope" 
               className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-125 w-full"
             />
