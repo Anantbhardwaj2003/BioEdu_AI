@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { DNABackground } from '../components/DNABackground';
-import { Dna, Scissors, Users, Fingerprint, Database, Microscope, FlaskConical, Activity } from 'lucide-react';
+import { Dna, Scissors, Users, Fingerprint, Database, FlaskConical, Activity } from 'lucide-react';
 
 export function GeneticsPage() {
   return (
