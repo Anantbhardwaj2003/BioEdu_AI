@@ -35,7 +35,7 @@ export function CancerResearchPage() {
           transition={{ delay: 0.1 }}
           className="w-full h-[40vh] md:h-[60vh] rounded-3xl overflow-hidden mb-24 relative border border-white/10 shadow-2xl"
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-transparent to-transparent z-10"></div>
           <img 
             src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80" 
             alt="Advanced laboratory research" 
@@ -185,11 +185,11 @@ export function CancerResearchPage() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 blur-2xl opacity-50 rounded-[3rem]" />
+            <div className="absolute -inset-4 bg-linear-to-r from-emerald-500/20 to-cyan-500/20 blur-2xl opacity-50 rounded-[3rem]" />
             <img 
               src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" 
               alt="Data analysis in laboratory" 
-              className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-[500px] w-full"
+              className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-125 w-full"
             />
           </motion.div>
         </div>
@@ -202,11 +202,11 @@ export function CancerResearchPage() {
             viewport={{ once: true }}
             className="relative order-2 lg:order-1"
           >
-            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-2xl opacity-50 rounded-[3rem]" />
+            <div className="absolute -inset-4 bg-linear-to-r from-cyan-500/20 to-blue-500/20 blur-2xl opacity-50 rounded-[3rem]" />
             <img 
               src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" 
               alt="Researcher looking through microscope" 
-              className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-[500px] w-full"
+              className="relative rounded-2xl border border-white/10 shadow-2xl object-cover h-125 w-full"
             />
           </motion.div>
 
