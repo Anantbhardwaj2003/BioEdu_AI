@@ -39,7 +39,7 @@ export function AdvancedCourses() {
           </p>
         </div>
 
-        <div className="relative w-full max-w-[900px] mx-auto h-[500px] md:h-[750px] flex items-center justify-center">
+        <div className="relative w-full max-w-225 mx-auto h-125 md:h-187.5 flex items-center justify-center">
           
           {/* Connecting Lines */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -51,7 +51,7 @@ export function AdvancedCourses() {
                   initial={{ width: 0, opacity: 0 }}
                   animate={{ width: radius, opacity: 1 }}
                   transition={{ delay: 0.5 + i * 0.1, duration: 1 }}
-                  className="absolute left-1/2 top-1/2 h-[1px] bg-gradient-to-r from-emerald-500/50 to-transparent origin-left"
+                  className="absolute left-1/2 top-1/2 h-px bg-linear-to-r from-emerald-500/50 to-transparent origin-left"
                   style={{
                     transform: `rotate(${angle}deg)`,
                   }}
@@ -66,44 +66,44 @@ export function AdvancedCourses() {
               animate={{ rotateY: [0, 360], rotateX: [15, 25, 15] }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
               style={{ transformStyle: 'preserve-3d' }}
-              className="w-[120px] h-[120px] md:w-[160px] md:h-[160px] relative"
+              className="w-30 h-30 md:w-40 md:h-40 relative"
             >
               {/* Front */}
               <div 
-                className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
                 style={{ transform: radius === 160 ? 'translateZ(60px)' : 'translateZ(80px)' }}
               >
                 <span className="font-display font-bold text-emerald-300 text-sm md:text-lg text-center leading-tight tracking-wider drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]">GENEBOX<br/>AI</span>
               </div>
               {/* Back */}
               <div 
-                className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
                 style={{ transform: radius === 160 ? 'rotateY(180deg) translateZ(60px)' : 'rotateY(180deg) translateZ(80px)' }}
               >
                 <span className="font-display font-bold text-emerald-300 text-sm md:text-lg text-center leading-tight tracking-wider drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]">GENEBOX<br/>AI</span>
               </div>
               {/* Right */}
               <div 
-                className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
                 style={{ transform: radius === 160 ? 'rotateY(90deg) translateZ(60px)' : 'rotateY(90deg) translateZ(80px)' }}
               >
                 <span className="font-display font-bold text-emerald-300 text-sm md:text-lg text-center leading-tight tracking-wider drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]">GENEBOX<br/>AI</span>
               </div>
               {/* Left */}
               <div 
-                className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
                 style={{ transform: radius === 160 ? 'rotateY(-90deg) translateZ(60px)' : 'rotateY(-90deg) translateZ(80px)' }}
               >
                 <span className="font-display font-bold text-emerald-300 text-sm md:text-lg text-center leading-tight tracking-wider drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]">GENEBOX<br/>AI</span>
               </div>
               {/* Top */}
               <div 
-                className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
                 style={{ transform: radius === 160 ? 'rotateX(90deg) translateZ(60px)' : 'rotateX(90deg) translateZ(80px)' }}
               ></div>
               {/* Bottom */}
               <div 
-                className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
                 style={{ transform: radius === 160 ? 'rotateX(-90deg) translateZ(60px)' : 'rotateX(-90deg) translateZ(80px)' }}
               ></div>
             </motion.div>
@@ -138,7 +138,7 @@ export function AdvancedCourses() {
                     className={`w-28 h-28 md:w-40 md:h-40 rounded-full flex flex-col items-center justify-center gap-2 backdrop-blur-2xl border ${field.bg} ${field.border} ${field.glow} hover:border-white/30 transition-all cursor-pointer relative group overflow-hidden`}
                   >
                     {/* Glass Highlight */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 to-transparent pointer-events-none opacity-50"></div>
+                    <div className="absolute inset-0 rounded-full bg-linear-to-br from-white/20 to-transparent pointer-events-none opacity-50"></div>
                     
                     <Icon className={`w-8 h-8 md:w-12 md:h-12 ${field.color} relative z-10 drop-shadow-[0_0_8px_currentColor]`} />
                     <span className="text-white text-[11px] md:text-[14px] font-semibold text-center px-2 md:px-3 leading-tight relative z-10 drop-shadow-md">{field.name}</span>
