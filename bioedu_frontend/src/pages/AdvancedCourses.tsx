@@ -68,44 +68,77 @@ export function AdvancedCourses() {
               style={{ transformStyle: 'preserve-3d' }}
               className="w-30 h-30 md:w-40 md:h-40 relative"
             >
+              {/* Inner DNA Core */}
+              <div 
+                className="absolute inset-0 flex items-center justify-center"
+                style={{ transform: 'translateZ(0px)', transformStyle: 'preserve-3d' }}
+              >
+                <motion.div
+                  animate={{ rotateY: [360, 0] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                >
+                  <Dna className="w-16 h-16 md:w-24 md:h-24 text-emerald-400 drop-shadow-[0_0_15px_rgba(16,185,129,1)]" />
+                </motion.div>
+              </div>
+
               {/* Front */}
               <div 
-                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-400/20 to-[#0a0f16]/60 backdrop-blur-[6px] border border-emerald-400/50 flex flex-col items-center justify-between py-2 md:py-4 shadow-[0_0_50px_rgba(16,185,129,0.4),inset_0_0_30px_rgba(16,185,129,0.3)] overflow-hidden"
                 style={{ transform: radius === 160 ? 'translateZ(60px)' : 'translateZ(80px)' }}
               >
-                <span className="font-display font-bold text-emerald-300 text-sm md:text-lg text-center leading-tight tracking-wider drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]">GENEBOX<br/>AI</span>
+                {/* Glass reflection */}
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent pointer-events-none opacity-50"></div>
+                
+                <span className="font-display font-bold text-white text-sm md:text-base tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mt-1 md:mt-2 relative z-10">Genebox</span>
+                <span className="font-display font-bold text-white text-sm md:text-base tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mb-1 md:mb-2 relative z-10">AI</span>
               </div>
               {/* Back */}
               <div 
-                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-400/20 to-[#0a0f16]/60 backdrop-blur-[6px] border border-emerald-400/50 flex flex-col items-center justify-between py-2 md:py-4 shadow-[0_0_50px_rgba(16,185,129,0.4),inset_0_0_30px_rgba(16,185,129,0.3)] overflow-hidden"
                 style={{ transform: radius === 160 ? 'rotateY(180deg) translateZ(60px)' : 'rotateY(180deg) translateZ(80px)' }}
               >
-                <span className="font-display font-bold text-emerald-300 text-sm md:text-lg text-center leading-tight tracking-wider drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]">GENEBOX<br/>AI</span>
+                {/* Glass reflection */}
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent pointer-events-none opacity-50"></div>
+
+                <span className="font-display font-bold text-white text-sm md:text-base tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mt-1 md:mt-2 relative z-10">Genebox</span>
+                <span className="font-display font-bold text-white text-sm md:text-base tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mb-1 md:mb-2 relative z-10">AI</span>
               </div>
               {/* Right */}
               <div 
-                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-400/20 to-[#0a0f16]/60 backdrop-blur-[6px] border border-emerald-400/50 flex flex-col items-center justify-between py-2 md:py-4 shadow-[0_0_50px_rgba(16,185,129,0.4),inset_0_0_30px_rgba(16,185,129,0.3)] overflow-hidden"
                 style={{ transform: radius === 160 ? 'rotateY(90deg) translateZ(60px)' : 'rotateY(90deg) translateZ(80px)' }}
               >
-                <span className="font-display font-bold text-emerald-300 text-sm md:text-lg text-center leading-tight tracking-wider drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]">GENEBOX<br/>AI</span>
+                {/* Glass reflection */}
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent pointer-events-none opacity-50"></div>
+
+                <span className="font-display font-bold text-white text-sm md:text-base tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mt-1 md:mt-2 relative z-10">Genebox</span>
+                <span className="font-display font-bold text-white text-sm md:text-base tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mb-1 md:mb-2 relative z-10">AI</span>
               </div>
               {/* Left */}
               <div 
-                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-400/20 to-[#0a0f16]/60 backdrop-blur-[6px] border border-emerald-400/50 flex flex-col items-center justify-between py-2 md:py-4 shadow-[0_0_50px_rgba(16,185,129,0.4),inset_0_0_30px_rgba(16,185,129,0.3)] overflow-hidden"
                 style={{ transform: radius === 160 ? 'rotateY(-90deg) translateZ(60px)' : 'rotateY(-90deg) translateZ(80px)' }}
               >
-                <span className="font-display font-bold text-emerald-300 text-sm md:text-lg text-center leading-tight tracking-wider drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]">GENEBOX<br/>AI</span>
+                {/* Glass reflection */}
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent pointer-events-none opacity-50"></div>
+
+                <span className="font-display font-bold text-white text-sm md:text-base tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mt-1 md:mt-2 relative z-10">Genebox</span>
+                <span className="font-display font-bold text-white text-sm md:text-base tracking-[0.3em] uppercase drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] mb-1 md:mb-2 relative z-10">AI</span>
               </div>
               {/* Top */}
               <div 
-                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-400/20 to-[#0a0f16]/60 backdrop-blur-[6px] border border-emerald-400/50 shadow-[0_0_50px_rgba(16,185,129,0.4),inset_0_0_30px_rgba(16,185,129,0.3)] overflow-hidden"
                 style={{ transform: radius === 160 ? 'rotateX(90deg) translateZ(60px)' : 'rotateX(90deg) translateZ(80px)' }}
-              ></div>
+              >
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent pointer-events-none opacity-50"></div>
+              </div>
               {/* Bottom */}
               <div 
-                className="absolute inset-0 bg-linear-to-br from-emerald-500/30 to-[#0a0f16]/90 backdrop-blur-md border border-emerald-500/60 shadow-[0_0_40px_rgba(16,185,129,0.5),inset_0_0_20px_rgba(16,185,129,0.4)]"
+                className="absolute inset-0 bg-linear-to-br from-emerald-400/20 to-[#0a0f16]/60 backdrop-blur-[6px] border border-emerald-400/50 shadow-[0_0_50px_rgba(16,185,129,0.4),inset_0_0_30px_rgba(16,185,129,0.3)] overflow-hidden"
                 style={{ transform: radius === 160 ? 'rotateX(-90deg) translateZ(60px)' : 'rotateX(-90deg) translateZ(80px)' }}
-              ></div>
+              >
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent pointer-events-none opacity-50"></div>
+              </div>
             </motion.div>
           </div>
 
