@@ -50,7 +50,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="lg:hidden bg-[#fafafa] border-b border-slate-200 px-4 pt-2 pb-6 space-y-1 shadow-lg absolute w-full left-0">
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Learn</a>
-          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Workshops</a>
+          <Link to="/workshops" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Workshops</Link>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Bootcamps</a>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Experts</a>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Community</a>
