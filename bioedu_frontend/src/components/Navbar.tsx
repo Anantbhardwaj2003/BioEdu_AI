@@ -1,155 +1,66 @@
-import { motion, AnimatePresence } from 'motion/react';
-import { Dna, Menu, X, LogOut, ChevronDown } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
-export function Navbar() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [userEmail, setUserEmail] = useState('');
-  const [isCoursesOpen, setIsCoursesOpen] = useState(false);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      const token = localStorage.getItem('token');
-      if (token) {
-        try {
-          const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/me`, {
-            headers: {
-              'Authorization': `Bearer ${token}`
-            }
-          });
-          if (res.ok) {
-            const data = await res.json();
-            setUserEmail(data.email);
-          } else {
-            localStorage.removeItem('token');
-          }
-        } catch (err) {
-          localStorage.removeItem('token');
-        }
-      }
-    };
-    checkAuth();
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    setUserEmail('');
-    navigate('/');
-  };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b-0 border-white/5 bg-[#050505]/60">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 text-zinc-50">
-          <Dna className="w-6 h-6 text-emerald-400" />
-          <span className="font-display font-semibold tracking-tight text-lg">GeneBox AI</span>
-        </Link>
-
-        <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <div 
-            className="relative"
-            onMouseEnter={() => setIsCoursesOpen(true)}
-            onMouseLeave={() => setIsCoursesOpen(false)}
-          >
-            <Link to="/advanced-courses" className="text-zinc-400 hover:text-zinc-50 transition-colors flex items-center gap-1 py-4">Advanced Courses<ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCoursesOpen ? 'rotate-180' : ''}`} /></Link>
-            <AnimatePresence>
-              {isCoursesOpen && (
-                <motion.div
-                  initial={{opacity: 0, y: 10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                  className="absolute top-full left-0 mt-2 w-56 bg-[#0a0f16]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl py-2 z-50 flex flex-col"
-                >
-                  <Link to="/advanced-courses/cancer" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Cancer Research</Link>
-                  <Link to="/advanced-courses/genetics" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Genetics</Link>
-                  <Link to="/advanced-courses/nervous-system" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Nervous System</Link>
-                  <Link to="/advanced-courses/immunology" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Immunology</Link>
-                  <Link to="/advanced-courses/immuno-oncology" className="px-4 py-2.5 text-sm text-zinc-400 hover:text-emerald-400 hover:bg-emerald-400/10 transition-all duration-200">Immuno-oncology</Link>
-                </motion.div>
-              )}
-            </AnimatePresence>
+    <header className="bg-[#fafafa]/90 backdrop-blur-md border-b border-slate-200/60 sticky top-0 z-50">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        {/* Logo */}
+        <a href="#" className="flex-shrink-0 flex items-center gap-3">
+          <div className="relative flex items-center justify-center w-7 h-7 text-slate-950">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full">
+              <path d="M28 12 V4 H4 V28 H16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter" />
+            </svg>
+            <span className="font-mono text-[15px] font-bold leading-none mt-0.5 ml-0.5">G</span>
           </div>
-          <Link to="/workshops" className="text-zinc-400 hover:text-zinc-50 transition-colors py-4">Recent Training</Link>
-          <Link to="/faq" className="text-zinc-400 hover:text-zinc-50 transition-colors py-4">FAQ</Link>
-          <Link to="/teams" className="text-zinc-400 hover:text-zinc-50 transition-colors py-4">Teams</Link>
-          <Link to="/about-us" className="text-zinc-400 hover:text-zinc-50 transition-colors py-4">About Us</Link>
+          <span className="font-mono font-bold tracking-[0.15em] text-lg text-slate-950">GeneBoxAI</span>
+        </a>
+
+        {/* Desktop Nav */}
+        <div className="hidden lg:flex items-center gap-7">
+          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Learn</a>
+          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Workshops</a>
+          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Bootcamps</a>
+          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Experts</a>
+          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Community</a>
+          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Research</a>
+          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Resources</a>
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
-          {userEmail ? (
-            <div className="flex items-center gap-4">
-              <span className="text-sm font-medium text-emerald-400 bg-emerald-400/10 px-3 py-1.5 rounded-full border border-emerald-400/20">
-                Welcome back, {userEmail}
-              </span>
-              <button 
-                onClick={handleLogout}
-                className="text-sm font-medium bg-white/10 text-white px-4 py-2 rounded-full hover:bg-white/20 transition-colors flex items-center gap-2"
-              >
-                <LogOut className="w-4 h-4" />
-                Logout
-              </button>
-            </div>
-          ) : (
-            <>
-              <Link to="/login" className="text-sm font-medium text-zinc-300 hover:text-zinc-50 transition-colors">Log in</Link>
-              <Link to="/login" className="text-sm font-medium bg-white text-black px-4 py-2 rounded-full hover:bg-zinc-200 transition-colors">
-                Get Started
-              </Link>
-            </>
-          )}
+        {/* CTAs */}
+        <div className="hidden lg:flex items-center gap-5">
+          <a href="#" className="text-[13px] font-semibold text-slate-950 hover:text-slate-600 transition-colors">Login</a>
+          <a href="#" className="text-[13px] font-semibold text-white bg-slate-900 hover:bg-black px-4 py-2 rounded-lg transition-colors shadow-sm shadow-slate-900/20">
+            Join Community
+          </a>
         </div>
 
-        <button
-          className="md:hidden text-zinc-300"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden flex items-center">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-slate-950 p-2">
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </nav>
+      
+      {/* Mobile Menu */}
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-16 left-0 right-0 glass-card mx-4 p-4 flex flex-col gap-4 border-t border-white/5"
-        >
-          <Link to="/#features" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Features</Link>
-          <Link to="/advanced-courses" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Advanced Courses</Link>
-          <Link to="/workshops" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Recent Training</Link>
-          <Link to="/#blog" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Blog</Link>
-          <Link to="/#pricing" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Pricing</Link>
-          <Link to="/faq" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>FAQ</Link>
-          <Link to="/teams" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>Teams</Link>
-          <Link to="/about-us" className="text-zinc-300 p-2" onClick={() => setIsOpen(false)}>About Us</Link>
-          <hr className="border-white/10" />
-          
-          {userEmail ? (
-            <>
-              <div className="p-2 text-sm font-medium text-emerald-400">
-                Welcome back, {userEmail}
-              </div>
-              <button 
-                onClick={() => {
-                  handleLogout();
-                  setIsOpen(false);
-                }}
-                className="w-full text-left bg-white/10 text-zinc-50 p-2 rounded-lg font-medium flex items-center gap-2"
-              >
-                <LogOut className="w-4 h-4" />
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link to="/login" className="w-full text-left p-2 text-zinc-300" onClick={() => setIsOpen(false)}>Log in</Link>
-              <Link to="/login" className="w-full bg-emerald-500 text-zinc-50 p-2 rounded-lg font-medium text-center" onClick={() => setIsOpen(false)}>Get Started</Link>
-            </>
-          )}
-        </motion.div>
+        <div className="lg:hidden bg-[#fafafa] border-b border-slate-200 px-4 pt-2 pb-6 space-y-1 shadow-lg absolute w-full left-0">
+          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Learn</a>
+          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Workshops</a>
+          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Bootcamps</a>
+          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Experts</a>
+          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Community</a>
+          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Research</a>
+          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Resources</a>
+          <div className="mt-4 pt-4 border-t border-slate-200 px-3 flex flex-col gap-3">
+            <a href="#" className="block text-center w-full px-4 py-2.5 text-base font-semibold text-slate-950 border border-slate-300 rounded-lg hover:bg-slate-100 transition-colors">Login</a>
+            <a href="#" className="block text-center w-full px-4 py-2.5 text-base font-semibold text-white bg-slate-900 hover:bg-black rounded-lg transition-colors">Join Community</a>
+          </div>
+        </div>
       )}
-    </nav>
+    </header>
   );
 }
