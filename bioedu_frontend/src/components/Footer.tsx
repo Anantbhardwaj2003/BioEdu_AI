@@ -1,4 +1,21 @@
 import { Link } from "react-router-dom";
+import { Mail } from "lucide-react";
+
+const YouTubeIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M2.5 7.1c.3-1.5 1.5-2.7 3-3 .9-.2 6.5-.2 6.5-.2s5.6 0 6.5.2c1.5.3 2.7 1.5 3 3 .2 1 .2 3.4.2 4.9s0 3.9-.2 4.9c-.3 1.5-1.5 2.7-3 3-.9.2-6.5.2-6.5.2s-5.6 0-6.5-.2c-1.5-.3-2.7-1.5-3-3-.2-1-.2-3.4-.2-4.9s0-3.9.2-4.9"/>
+    <path d="m10 15 5-3-5-3v6z"/>
+  </svg>
+);
+
+const LinkedInIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+    <rect width="4" height="12" x="2" y="9"/>
+    <circle cx="4" cy="4" r="2"/>
+  </svg>
+);
+
 export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200/60 pt-16 pb-8">
@@ -53,6 +70,17 @@ export default function Footer() {
           <p className="text-sm text-slate-500">
             &copy; {new Date().getFullYear()} GeneBoxAI, Inc. All rights reserved.
           </p>
+          <div className="flex items-center gap-5 text-slate-400">
+            <a href="https://www.youtube.com/@GeneboxAI" target="_blank" className="hover:text-blue-600 transition-colors" aria-label="YouTube">
+              <YouTubeIcon className="w-5 h-5" />
+            </a>
+            <a href="https://www.linkedin.com/in/anant-bhardwaj-b34417292/" target="_blank" className="hover:text-blue-600 transition-colors" aria-label="LinkedIn">
+              <LinkedInIcon className="w-5 h-5" />
+            </a>
+            <a href="mailto:geneboxai@gmail.com" className="hover:text-blue-600 transition-colors" aria-label="Email">
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
