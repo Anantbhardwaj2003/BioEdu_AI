@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200/60 pt-16 pb-8">
@@ -22,7 +23,7 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold text-slate-950 mb-4 text-sm">Platform</h4>
               <ul className="space-y-3 text-sm text-slate-600">
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Workshops</a></li>
+                <li><Link to="/workshops" className="hover:text-blue-600 transition-colors">Workshops</Link></li>
                 <li><a href="#" className="hover:text-blue-600 transition-colors">Bootcamps</a></li>
                 <li><a href="#" className="hover:text-blue-600 transition-colors">For Experts</a></li>
                 <li><a href="#" className="hover:text-blue-600 transition-colors">Community</a></li>
@@ -33,6 +34,7 @@ export default function Footer() {
               <ul className="space-y-3 text-sm text-slate-600">
                 <li><a href="#" className="hover:text-blue-600 transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-blue-600 transition-colors">Research</a></li>
+                <li><Link to="/teams" className="hover:text-blue-600 transition-colors">Teams</Link></li>
                 <li><a href="#" className="hover:text-blue-600 transition-colors">Careers</a></li>
                 <li><a href="#" className="hover:text-blue-600 transition-colors">Contact</a></li>
               </ul>

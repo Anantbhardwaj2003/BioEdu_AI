@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,7 @@ export default function Navbar() {
     <header className="bg-[#fafafa]/90 backdrop-blur-md border-b border-slate-200/60 sticky top-0 z-50">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="#" className="flex-shrink-0 flex items-center gap-3">
+        <Link to="/" className="flex-shrink-0 flex items-center gap-3">
           <div className="relative flex items-center justify-center w-7 h-7 text-slate-950">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full">
               <path d="M28 12 V4 H4 V28 H16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter" />
@@ -16,12 +17,12 @@ export default function Navbar() {
             <span className="font-mono text-[15px] font-bold leading-none mt-0.5 ml-0.5">G</span>
           </div>
           <span className="font-mono font-bold tracking-[0.15em] text-lg text-slate-950">GeneBoxAI</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-7">
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Learn</a>
-          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Workshops</a>
+          <Link to="/workshops" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Workshops</Link>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Bootcamps</a>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Experts</a>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Community</a>

@@ -1,19 +1,22 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import AboutUs from "./components/AboutUs";
-import ForExperts from "./components/ForExperts";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Teams from "./pages/Teams";
+import Workshops from "./pages/Workshops";
 
 export default function App() {
   return (
+    <BrowserRouter>
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-blue-200 selection:text-blue-900">
       <Navbar />
-      <main>
-        <Hero />
-        <AboutUs />
-        <ForExperts />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/teams" element={<Teams />} />
+        <Route path="/workshops" element={<Workshops />} />
+      </Routes>
       <Footer />
     </div>
+    </BrowserRouter>
   );
 }
