@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { Microscope, Brain } from 'lucide-react';
 import Anant from "../../public/team1.jpeg";
-import Pawan from "../../public/team2.png"
+import Pawan from "../../public/team2.png";
+import Ankush from "../../public/team3.jpeg";
+import Ankit from "../../public/team4.png";
 
 export default function Teams() {
   const teamMembers = [
@@ -18,6 +20,20 @@ export default function Teams() {
       bio: "With a strong background in bioinformatics, I am passionate about leveraging computational tools to solve biological problems. I am looking forward to contributing to the cutting edge of genomic research.",
       image: Pawan,
       icon: <Brain className="w-5 h-5 text-indigo-500" />
+    },
+    {
+      name: "Mr. Ankit Ashesh",
+      role: "Financial Advisor & Marketing Manager",
+      bio: "With a strong background in financial planning and marketing, I am passionate about leveraging business strategies to solve biological problems and pursing MBA from IIM Jammu.",
+      image: Ankit,
+      icon: <Microscope className="w-5 h-5 text-blue-500" />
+    },
+    {
+      name: "Mr. Ankush Kumar",
+      role: "PR & Marketing Manager",
+      bio: "Ankush Kumar, PhD Scholar at the Regional Centre for Biotechnology, speacialized in Synthetic Biology and RNA structural conformations.",
+      image: Ankush,
+      icon: <Microscope className="w-5 h-5 text-blue-500" />
     }
   ];
 
