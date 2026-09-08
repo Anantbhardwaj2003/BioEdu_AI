@@ -4,6 +4,10 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Teams from "./pages/Teams";
 import Workshops from "./pages/Workshops";
+import Terms from "./pages/Terms";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Faq from "./pages/Faq";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -14,6 +18,10 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/workshops" element={<Workshops />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </div>
