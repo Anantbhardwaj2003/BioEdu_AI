@@ -74,7 +74,7 @@ export default function Footer() {
             <a href="https://www.youtube.com/@GeneboxAI" target="_blank" className="hover:text-blue-600 transition-colors" aria-label="YouTube">
               <YouTubeIcon className="w-5 h-5" />
             </a>
-            <a href="https://www.linkedin.com/in/anant-bhardwaj-b34417292/" target="_blank" className="hover:text-blue-600 transition-colors" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/geneboxai/" target="_blank" className="hover:text-blue-600 transition-colors" aria-label="LinkedIn">
               <LinkedInIcon className="w-5 h-5" />
             </a>
             <a href="mailto:geneboxai@gmail.com" className="hover:text-blue-600 transition-colors" aria-label="Email">
