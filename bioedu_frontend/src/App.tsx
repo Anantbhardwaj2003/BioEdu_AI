@@ -8,6 +8,7 @@ import Terms from "./pages/Terms";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Faq from "./pages/Faq";
 import About from "./pages/About";
+import Community from "./pages/Community";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/about" element={<About />} />
+        <Route path="/community" element={<Community />} />
       </Routes>
       <Footer />
     </div>

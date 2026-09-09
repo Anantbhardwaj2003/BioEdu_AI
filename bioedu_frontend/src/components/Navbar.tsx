@@ -25,7 +25,7 @@ export default function Navbar() {
           <Link to="/workshops" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Workshops</Link>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Bootcamps</a>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Experts</a>
-          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Community</a>
+          <Link to="/community" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Community</Link>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Research</a>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Resources</a>
         </div>
@@ -53,7 +53,7 @@ export default function Navbar() {
           <Link to="/workshops" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Workshops</Link>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Bootcamps</a>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Experts</a>
-          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Community</a>
+          <Link to="/community" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Community</Link>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Research</a>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Resources</a>
           <div className="mt-4 pt-4 border-t border-slate-200 px-3 flex flex-col gap-3">
