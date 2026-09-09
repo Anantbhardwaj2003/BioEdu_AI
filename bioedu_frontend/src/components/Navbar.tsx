@@ -24,7 +24,7 @@ export default function Navbar() {
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Learn</a>
           <Link to="/workshops" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Workshops</Link>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Bootcamps</a>
-          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Experts</a>
+          <Link to="/experts" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Experts</Link>
           <Link to="/community" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Community</Link>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Research</a>
           <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Resources</a>
@@ -52,7 +52,7 @@ export default function Navbar() {
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Learn</a>
           <Link to="/workshops" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Workshops</Link>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Bootcamps</a>
-          <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Experts</a>
+          <Link to="/experts" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Experts</Link>
           <Link to="/community" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Community</Link>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Research</a>
           <a href="#" className="block px-3 py-2 text-base font-medium text-slate-900 rounded-md hover:bg-slate-200/50">Resources</a>

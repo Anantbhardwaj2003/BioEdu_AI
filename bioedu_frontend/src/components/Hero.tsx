@@ -1,6 +1,7 @@
 import { Microscope } from "lucide-react";
 import { motion } from "motion/react";
 import ProteinViewer from "./ProteinViewer";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
 
@@ -81,12 +82,12 @@ export default function Hero() {
               variants={itemVariants}
               className="flex flex-wrap items-center gap-4"
             >
-              <a href="#" className="inline-flex items-center justify-center bg-slate-900 text-white px-7 py-3.5 rounded-lg text-sm font-semibold hover:bg-black transition-all shadow-md shadow-slate-900/20 hover:shadow-lg hover:shadow-slate-900/30 hover:-translate-y-0.5">
+              <Link to="/workshops" className="inline-flex items-center justify-center bg-slate-900 text-white px-7 py-3.5 rounded-lg text-sm font-semibold hover:bg-black transition-all shadow-md shadow-slate-900/20 hover:shadow-lg hover:shadow-slate-900/30 hover:-translate-y-0.5">
                 Explore Workshops
-              </a>
-              <a href="#" className="inline-flex items-center justify-center bg-white/80 backdrop-blur-sm text-slate-950 border border-slate-200/60 px-7 py-3.5 rounded-lg text-sm font-semibold hover:border-slate-300 hover:bg-white transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+              </Link>
+              <Link to="/experts" className="inline-flex items-center justify-center bg-white/80 backdrop-blur-sm text-slate-950 border border-slate-200/60 px-7 py-3.5 rounded-lg text-sm font-semibold hover:border-slate-300 hover:bg-white transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
                 Meet Experts
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
 

@@ -9,6 +9,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Faq from "./pages/Faq";
 import About from "./pages/About";
 import Community from "./pages/Community";
+import Experts from "./pages/Experts";
+import ApplyExpert from "./pages/ExpertJoinForm";
 
 export default function App() {
   return (
@@ -24,6 +26,8 @@ export default function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/about" element={<About />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/experts" element={<Experts />} />
+        <Route path="/apply-expert" element={<ApplyExpert />} />
       </Routes>
       <Footer />
     </div>
