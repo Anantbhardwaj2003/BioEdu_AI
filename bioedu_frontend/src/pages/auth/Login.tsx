@@ -1,10 +1,35 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, ArrowRight, Brain, Dna, Database, Sparkles } from 'lucide-react';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newErrors: { email?: string; password?: string } = {};
+    
+    if (!email) {
+      newErrors.email = 'Email address is required';
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!password) {
+      newErrors.password = 'Password is required';
+    }
+    
+    setErrors(newErrors);
+    
+    if (Object.keys(newErrors).length === 0) {
+      // Proceed with login logic
+      console.log('Login valid', { email, password });
+    }
+  };
 
   return (
     <div className="w-full min-h-[calc(100vh-5rem)] flex flex-col md:flex-row bg-slate-950 font-sans text-slate-300 selection:bg-slate-700 selection:text-white relative">
@@ -151,33 +176,52 @@ export default function Login() {
             <p className="text-xs text-slate-400">Sign in to continue to GeneBoxAI</p>
           </div>
 
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4" onSubmit={handleSubmit} noValidate>
             <div className="space-y-1.5">
               <label className="text-[13px] font-semibold text-slate-300 block">Email address</label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <div className={`absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none ${errors.email ? 'text-red-400' : 'text-slate-500'}`}>
                   <Mail className="w-4 h-4" />
                 </div>
                 <input 
                   type="email" 
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (errors.email) setErrors({ ...errors, email: undefined });
+                  }}
                   placeholder="you@example.com"
-                  className="w-full pl-10 pr-4 py-2 bg-slate-950/50 border border-slate-800 text-sm text-white placeholder-slate-600 rounded-lg focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500 transition-all shadow-inner"
-                  required
+                  className={`w-full pl-10 pr-4 py-2 bg-slate-950/50 border text-sm text-white placeholder-slate-600 rounded-lg focus:outline-none focus:ring-1 transition-all shadow-inner ${
+                    errors.email 
+                      ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/50' 
+                      : 'border-slate-800 focus:border-slate-500 focus:ring-slate-500'
+                  }`}
                 />
               </div>
+              {errors.email && (
+                <p className="text-[11px] text-red-400 font-medium">{errors.email}</p>
+              )}
             </div>
 
             <div className="space-y-1.5">
               <label className="text-[13px] font-semibold text-slate-300 block">Password</label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <div className={`absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none ${errors.password ? 'text-red-400' : 'text-slate-500'}`}>
                   <Lock className="w-4 h-4" />
                 </div>
                 <input 
                   type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    if (errors.password) setErrors({ ...errors, password: undefined });
+                  }}
                   placeholder="Enter your password"
-                  className="w-full pl-10 pr-12 py-2 bg-slate-950/50 border border-slate-800 text-sm text-white placeholder-slate-600 rounded-lg focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500 transition-all shadow-inner"
-                  required
+                  className={`w-full pl-10 pr-12 py-2 bg-slate-950/50 border text-sm text-white placeholder-slate-600 rounded-lg focus:outline-none focus:ring-1 transition-all shadow-inner ${
+                    errors.password 
+                      ? 'border-red-500/50 focus:border-red-500 focus:ring-red-500/50' 
+                      : 'border-slate-800 focus:border-slate-500 focus:ring-slate-500'
+                  }`}
                 />
                 <button 
                   type="button"
@@ -187,6 +231,9 @@ export default function Login() {
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
+              {errors.password && (
+                <p className="text-[11px] text-red-400 font-medium">{errors.password}</p>
+              )}
             </div>
 
             <div className="flex items-center justify-between pt-0.5">
