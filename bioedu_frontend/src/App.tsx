@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Community from "./pages/Community";
 import Experts from "./pages/Experts";
 import ApplyExpert from "./pages/ExpertJoinForm";
+import Login from "./pages/auth/Login";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/experts" element={<Experts />} />
         <Route path="/apply-expert" element={<ApplyExpert />} />
+        <Route path="/login" element={<Login/>} />
       </Routes>
       <Footer />
     </div>
