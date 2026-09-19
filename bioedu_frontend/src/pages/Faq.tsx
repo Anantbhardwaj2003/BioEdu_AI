@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, HelpCircle, MessageCircleQuestion } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const faqs = [
   {
@@ -120,9 +121,9 @@ export default function Faq() {
           className="mt-16 text-center"
         >
           <p className="text-slate-400 mb-4">Still have questions?</p>
-          <button className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white rounded-xl font-medium transition-all duration-300">
+          <Link to="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white rounded-xl font-medium transition-all duration-300">
             Contact Support
-          </button>
+          </Link>
         </motion.div>
       </div>
     </main>

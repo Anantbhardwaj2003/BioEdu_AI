@@ -12,6 +12,8 @@ import Community from "./pages/Community";
 import Experts from "./pages/Experts";
 import ApplyExpert from "./pages/ExpertJoinForm";
 import Login from "./pages/auth/Login";
+import Services from "./pages/Services";
+import Contact from "./pages/ContactPage";
 
 export default function App() {
   return (
@@ -30,6 +32,8 @@ export default function App() {
         <Route path="/experts" element={<Experts />} />
         <Route path="/apply-expert" element={<ApplyExpert />} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>

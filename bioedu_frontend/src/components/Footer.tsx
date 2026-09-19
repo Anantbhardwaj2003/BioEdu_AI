@@ -41,8 +41,8 @@ export default function Footer() {
               <h4 className="font-semibold text-slate-950 mb-4 text-sm">Platform</h4>
               <ul className="space-y-3 text-sm text-slate-600">
                 <li><Link to="/workshops" className="hover:text-blue-600 transition-colors">Workshops</Link></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Bootcamps</a></li>
-                <li><Link to="/experts" className="hover:text-blue-600 transition-colors">For Experts</Link></li>
+                <li><Link to="/services" className="hover:text-blue-600 transition-colors">Services</Link></li>
+                {/* <li><Link to="/experts" className="hover:text-blue-600 transition-colors">For Experts</Link></li> */}
                 <li><Link to="/community" className="hover:text-blue-600 transition-colors">Community</Link></li>
               </ul>
             </div>
@@ -50,10 +50,10 @@ export default function Footer() {
               <h4 className="font-semibold text-slate-950 mb-4 text-sm">Company</h4>
               <ul className="space-y-3 text-sm text-slate-600">
                 <li><Link to="/about" className="hover:text-blue-600 transition-colors">About Us</Link></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Research</a></li>
+                {/* <li><a href="#" className="hover:text-blue-600 transition-colors">Research</a></li> */}
                 <li><Link to="/teams" className="hover:text-blue-600 transition-colors">Teams</Link></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Contact</a></li>
+                {/* <li><a href="#" className="hover:text-blue-600 transition-colors">Careers</a></li> */}
+                {/* <li><a href="#" className="hover:text-blue-600 transition-colors">Contact</a></li> */}
                 <li><Link to="/faq" className="hover:text-blue-600 transition-colors">FAQ</Link></li>
               </ul>
             </div>

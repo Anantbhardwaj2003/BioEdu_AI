@@ -22,13 +22,12 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-7">
-          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Learn</a>
           <Link to="/workshops" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Workshops</Link>
-          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Bootcamps</a>
-          <Link to="/experts" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Experts</Link>
+          <Link to="/services" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Services</Link>
+          {/* <Link to="/experts" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Experts</Link> */}
           <Link to="/community" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Community</Link>
-          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Research</a>
-          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Resources</a>
+          {/* <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Research</a>
+          <a href="#" className="text-[13px] font-medium text-slate-600 hover:text-slate-950 transition-colors">Resources</a> */}
         </div>
 
         {/* CTAs */}
@@ -60,13 +59,12 @@ export default function Navbar() {
             className="lg:hidden bg-white border-b border-slate-200 overflow-hidden shadow-xl absolute w-full left-0 z-40"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
-              <a href="#" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors">Learn</a>
               <Link to="/workshops" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors" onClick={() => setIsOpen(false)}>Workshops</Link>
-              <a href="#" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors">Bootcamps</a>
-              <Link to="/experts" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors" onClick={() => setIsOpen(false)}>Experts</Link>
+              <Link to="/services" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors" onClick={() => setIsOpen(false)}>Services</Link>
+              {/* <Link to="/experts" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors" onClick={() => setIsOpen(false)}>Experts</Link> */}
               <Link to="/community" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors" onClick={() => setIsOpen(false)}>Community</Link>
-              <a href="#" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors">Research</a>
-              <a href="#" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors">Resources</a>
+              {/* <a href="#" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors">Research</a>
+              <a href="#" className="block px-3 py-2 text-base font-medium text-slate-600 rounded-md hover:bg-slate-50 hover:text-slate-900 transition-colors">Resources</a> */}
               <div className="mt-4 pt-4 border-t border-slate-100 px-3 flex flex-col gap-3">
                 <Link to="/login" className="block text-center w-full px-4 py-2.5 text-base font-semibold text-slate-950 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors shadow-sm" onClick={() => setIsOpen(false)}>Login</Link>
                 <Link to="/community" className="block text-center w-full px-4 py-2.5 text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-colors shadow-sm" onClick={() => setIsOpen(false)}>Join Community</Link>
