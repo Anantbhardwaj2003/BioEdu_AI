@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function ForExperts() {
   return (
     <div id="experts" className="bg-white py-24 border-y border-slate-200/60">
@@ -14,9 +15,9 @@ export default function ForExperts() {
               We handle marketing, enrollment, payments, and platform logistics. You focus on teaching the methodologies and pipelines that define your research.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#" className="bg-blue-600 text-white px-7 py-3.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm">
+              <Link to="/apply-expert" className="bg-blue-600 text-white px-7 py-3.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm">
                 Apply to Become an Instructor
-              </a>
+              </Link>
               <a href="#" className="bg-white/10 text-white border border-white/20 px-7 py-3.5 rounded-lg text-sm font-semibold hover:bg-white/20 transition-colors">
                 Learn How it Works
               </a>

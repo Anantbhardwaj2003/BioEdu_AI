@@ -8,10 +8,8 @@ import {
   Send, 
   Zap, 
   Headphones, 
-  Phone, 
-  MapPin,   
-  ChevronRight, 
-  MessageCircle, 
+  Phone,  
+  ChevronRight,
   CheckCircle2, 
   X,
   Sparkles
@@ -409,7 +407,7 @@ export default function ContactPage() {
                 
                 {/* 1. Email Support */}
                 <a
-                  href="mailto:support@geneboxai.com"
+                  href="mailto:geneboxai@gmail.com"
                   className="flex items-center justify-between p-3 rounded-xl bg-zinc-950/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-950 transition-all group"
                 >
                   <div className="flex items-center gap-3">
@@ -419,7 +417,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="text-xs font-semibold text-white">Email Support</h4>
                       <p className="text-xs font-mono text-zinc-400 group-hover:text-sky-300 transition-colors">
-                        support@geneboxai.com
+                        geneboxai@gmail.com
                       </p>
                     </div>
                   </div>
@@ -433,7 +431,7 @@ export default function ContactPage() {
                 </a>
 
                 {/* 2. Live Chat */}
-                <button
+                {/* <button
                   type="button"
                   onClick={() => setIsChatModalOpen(true)}
                   className="w-full flex items-center justify-between p-3 rounded-xl bg-zinc-950/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-950 transition-all group text-left cursor-pointer"
@@ -459,11 +457,11 @@ export default function ContactPage() {
                     </div>
                     <ChevronRight className="w-4 h-4 text-zinc-500 group-hover:text-white transition-transform group-hover:translate-x-1" />
                   </div>
-                </button>
+                </button> */}
 
                 {/* 3. Phone Support */}
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919911793112"
                   className="flex items-center justify-between p-3 rounded-xl bg-zinc-950/70 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-950 transition-all group"
                 >
                   <div className="flex items-center gap-3">
@@ -473,21 +471,21 @@ export default function ContactPage() {
                     <div>
                       <h4 className="text-xs font-semibold text-white">Phone Support</h4>
                       <p className="text-xs font-mono text-zinc-400 group-hover:text-sky-300 transition-colors">
-                        +91 98765 43210
+                        +91 99117 93112
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-right">
                     <div className="hidden sm:block text-[11px] text-zinc-500 leading-tight">
                       <span>Mon - Fri</span><br />
-                      <span className="text-zinc-300 font-semibold">9AM - 6PM (EST)</span>
+                      <span className="text-zinc-300 font-semibold">9AM - 6PM</span>
                     </div>
                     <ChevronRight className="w-4 h-4 text-zinc-500 group-hover:text-white transition-transform group-hover:translate-x-1" />
                   </div>
                 </a>
 
                 {/* 4. Our Office */}
-                <div className="flex items-start justify-between p-3 rounded-xl bg-zinc-950/70 border border-zinc-800 group">
+                {/* <div className="flex items-start justify-between p-3 rounded-xl bg-zinc-950/70 border border-zinc-800 group">
                   <div className="flex items-start gap-3">
                     <div className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 shrink-0 mt-0.5">
                       <MapPin className="w-4 h-4" />
@@ -506,8 +504,7 @@ export default function ContactPage() {
                     </div>
                     <ChevronRight className="w-4 h-4 text-zinc-500" />
                   </div>
-                </div>
-
+                </div> */}
               </div>
             </motion.div>
 
@@ -530,7 +527,7 @@ export default function ContactPage() {
                 
                 {/* LinkedIn */}
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/geneboxai/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
@@ -544,7 +541,7 @@ export default function ContactPage() {
                 </a>
 
                 {/* X / Twitter */}
-                <a
+                {/* <a
                   href="https://twitter.com"
                   target="_blank"
                   rel="noreferrer"
@@ -554,11 +551,11 @@ export default function ContactPage() {
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                   </svg>
-                </a>
+                </a> */}
 
                 {/* YouTube */}
                 <a
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@GeneboxAI"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="YouTube"
@@ -572,7 +569,7 @@ export default function ContactPage() {
 
                 {/* GitHub */}
                 <a
-                  href="https://github.com"
+                  href="https://github.com/anantbhardwaj2003/BioEdu_AI"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub"
@@ -586,13 +583,12 @@ export default function ContactPage() {
 
                 {/* Community / Email */}
                 <a
-                  href="mailto:contact@geneboxai.com"
+                  href="mailto:geneboxai@gmail.com"
                   aria-label="Contact Email"
                   className="w-10 h-10 rounded-full bg-zinc-950 border border-zinc-800 hover:border-cyan-500 hover:bg-cyan-500/10 text-zinc-400 hover:text-cyan-300 flex items-center justify-center transition-all shadow-sm hover:scale-110"
                 >
                   <Mail className="w-4 h-4" />
                 </a>
-
               </div>
             </motion.div>
 
