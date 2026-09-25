@@ -5,9 +5,6 @@ import {
   FlaskConical, 
   ArrowRight, 
   Check, 
-  Zap, 
-  ShieldCheck, 
-  Users, 
   Lightbulb, 
   Target, 
   Heart, 
@@ -20,9 +17,9 @@ import {
   Layers, 
   Activity
 } from 'lucide-react';
-import InteractiveDnaHelix from '../components/InteractiveDnaHelix';
 import FramerCard from '../components/FramerCard';
 import { NgsCardBackground, RnaCellCardBackground, UmapCardBackground } from '../components/ServiceCardVisuals';
+import HeartBg from '../assets/Heart_Bg.png';
 
 interface ServiceDetail {
   id: string;
@@ -143,7 +140,7 @@ export default function Services() {
     }, 2200);
   };
 
-  // UMAP clusters data
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-300 font-sans selection:bg-zinc-700 selection:text-white relative overflow-hidden pb-24">
       
@@ -158,9 +155,50 @@ export default function Services() {
         {/* Top Header & Value Props Section */}
         <div className="relative mb-12 lg:mb-16">
           
-          {/* Realistic 3D Interactive DNA Double Helix (Top Right) */}
-          <div className="absolute -top-6 right-0 w-[340px] sm:w-[420px] lg:w-[480px] h-[210px] hidden md:block z-0 overflow-hidden">
-            <InteractiveDnaHelix width={480} height={210} className="w-full h-full" />
+          {/* Original DNA Image Visual with Atmospheric Effects (Upper Part, Right-Aligned) */}
+          <div className="absolute -top-10 -right-4 sm:-right-8 lg:-right-10 w-[320px] sm:w-[500px] lg:w-[680px] h-[260px] sm:h-[320px] lg:h-[380px] pointer-events-none select-none overflow-hidden z-0">
+            {/* Bioluminescent Atmospheric Glow Backdrops */}
+            <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-sky-500/15 rounded-full blur-[80px] pointer-events-none" />
+            <div className="absolute bottom-6 right-12 w-52 h-52 bg-indigo-500/15 rounded-full blur-[90px] pointer-events-none" />
+
+            {/* Living Floating Motion Container */}
+            <motion.div 
+              className="relative w-full h-full [mask-image:radial-gradient(ellipse_at_65%_45%,black_35%,transparent_78%)]"
+              animate={{ 
+                y: [0, -7, 0],
+                scale: [1, 1.02, 1]
+              }}
+              transition={{ 
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              {/* Real Original DNA Image from Online */}
+              <img 
+                src={HeartBg} 
+                alt="Authentic DNA Double Helix Molecular Architecture" 
+                className="w-full h-full object-cover object-center filter brightness-85 saturate-110 mix-blend-screen"
+                loading="eager"
+              />
+
+              {/* Seamless Fade Overlays into Page Canvas */}
+              {/* Left Fade to ensure Headline text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/70 to-transparent pointer-events-none" />
+              {/* Bottom Fade to contain strictly to upper part */}
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent pointer-events-none" />
+              {/* Top Subtle Fade */}
+              <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-transparent to-transparent pointer-events-none" />
+              {/* Right Vignette */}
+              <div className="absolute inset-0 bg-gradient-to-l from-zinc-950/50 via-transparent to-transparent pointer-events-none" />
+
+              {/* Luminous Light Shimmer Sweep */}
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-tr from-transparent via-cyan-400/10 to-transparent pointer-events-none"
+                animate={{ x: ['-100%', '200%'] }}
+                transition={{ repeat: Infinity, duration: 7, ease: "linear", repeatDelay: 3 }}
+              />
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
@@ -183,44 +221,6 @@ export default function Services() {
               <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
                 We connect you with experienced bioinformatics freelancers who can help you analyze your biological data and turn it into meaningful insights.
               </p>
-            </div>
-
-            {/* Right Value Props (3 Pillars) */}
-            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-row gap-5 lg:justify-end pt-2">
-              
-              {/* Prop 1 */}
-              <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-700/70 flex items-center justify-center text-sky-400 shrink-0 shadow-sm">
-                  <Zap className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold text-white">Skilled Freelancers</h4>
-                  <p className="text-[11px] text-zinc-400 leading-snug mt-0.5">Verified experts in bioinformatics</p>
-                </div>
-              </div>
-
-              {/* Prop 2 */}
-              <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-700/70 flex items-center justify-center text-indigo-400 shrink-0 shadow-sm">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold text-white">Flexible Engagement</h4>
-                  <p className="text-[11px] text-zinc-400 leading-snug mt-0.5">Hire for short-term or long-term projects</p>
-                </div>
-              </div>
-
-              {/* Prop 3 */}
-              <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-700/70 flex items-center justify-center text-cyan-400 shrink-0 shadow-sm">
-                  <Users className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold text-white">High-Quality Results</h4>
-                  <p className="text-[11px] text-zinc-400 leading-snug mt-0.5">Accurate, reliable and on-time delivery</p>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
